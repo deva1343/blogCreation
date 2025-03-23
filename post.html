@@ -9,7 +9,7 @@
     /* Additional styling for the post detail page */
     .post-detail {
       max-width: 800px;
-      margin: 40px auto;
+      margin: 20px auto;
       padding: 20px;
       background: #fff;
       border-radius: 5px;
@@ -45,7 +45,7 @@
   </style>
 </head>
 <body>
-  <!-- Constant Header (Same as in index.html) -->
+  <!-- Constant Header -->
   <header>
     <div class="header-container">
       <div class="logo">
@@ -67,37 +67,34 @@
 
   <!-- Top Horizontal Ad -->
   <div class="ad-horizontal top-ad">
-    <!-- Insert your Google AdSense code here -->
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Post Container -->
+  <!-- Main Container -->
   <div class="main-container">
-    <!-- Post Content (occupies full width on small screens; 70% on large screens) -->
+    <!-- Post Content Area (70% width on larger screens) -->
     <main id="post-detail" class="content">
-      <!-- Post content will be dynamically loaded here -->
+      <!-- Post content will be loaded dynamically -->
     </main>
-    <!-- Right Vertical Ad (30% on large screens) -->
+    <!-- Right Vertical Ad (30% width on larger screens) -->
     <aside class="vertical-ad right-ad">
-      <!-- Insert your Google AdSense code here -->
       Google Ad Placeholder (Right)
     </aside>
   </div>
 
   <!-- Bottom Horizontal Ad -->
   <div class="ad-horizontal bottom-ad">
-    <!-- Insert your Google AdSense code here -->
     Google Ad Placeholder (Bottom)
   </div>
 
   <script>
-    // Utility to get query parameter from URL
+    // Utility function to get query parameter by name
     function getQueryParam(param) {
       const params = new URLSearchParams(window.location.search);
       return params.get(param);
     }
 
-    // Load and display the post based on the id parameter
+    // Load the post based on the id query parameter
     function loadPost(postId) {
       fetch("posts.json")
         .then(response => response.json())
