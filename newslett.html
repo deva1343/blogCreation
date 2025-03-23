@@ -3,46 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Join the Health and Wealth Community</title>
+  <title>dPal - Newsletter</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Inline styles for newsletter page; you can move these to style.css */
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      padding: 20px;
-      text-align: center;
-      color: #ecf0f1;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+    /* Additional styling for newsletter page */
     .newsletter-section {
       max-width: 600px;
-      margin: 40px auto;
-      padding: 30px;
+      margin: 20px auto;
+      padding: 20px;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
     }
     .newsletter-section h2 {
       color: #2980b9;
       margin-bottom: 15px;
-      font-size: 24px;
     }
     .newsletter-section p {
-      color: #555;
-      margin-bottom: 20px;
-      line-height: 1.5;
       font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
     }
     .newsletter-section form {
       display: flex;
@@ -79,36 +60,63 @@
   </style>
 </head>
 <body>
+  <!-- Constant Header -->
   <header>
-    <h1>Join the Health and Wealth Community</h1>
+    <div class="header-container">
+      <div class="logo"><a href="index.html">dPal</a></div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  
-  <main>
-    <section class="newsletter-section">
-      <!-- Detailed description for dpal.site -->
-      <h2>Health and Wealth with dpal.site</h2>
-      <p>
-        Join the Health and Wealth Community! Get daily health tips, natural wellness advice, and holistic living inspiration delivered straight to your inbox! From nutrition and mindfulness to self-care and sustainable living, we’re here to help you live your healthiest, happiest life—naturally.
-      </p>
-      <p>
-        Our community is dedicated to empowering you with the knowledge and tools to improve your overall well-being. Discover practical advice, inspiring stories, and expert insights to guide you on your journey to a balanced life. Whether you're looking for tips on healthy eating, effective workout routines, or stress management techniques, dpal.site is your go-to resource for transforming your life for the better.
-      </p>
-      
-      <!-- Subscription Form -->
-      <form id="newsletter-form">
-        <input type="email" name="email" placeholder="Enter your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
-      <div id="subscription-status"></div>
-    </section>
-  </main>
-  
-  <!-- Firebase SDK scripts -->
+
+  <!-- Top Horizontal Ad -->
+  <div class="ad-horizontal top-ad">
+    Google Ad Placeholder (Top)
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Newsletter Content (70% width on large screens) -->
+    <main class="content">
+      <div class="newsletter-section">
+        <h2>Join the Health and Wealth Community</h2>
+        <p>
+          Get daily health tips, natural wellness advice, and holistic living inspiration delivered straight to your inbox!
+          From nutrition and mindfulness to self-care and sustainable living, we’re here to help you live your healthiest, happiest life—naturally.
+        </p>
+        <form id="newsletter-form">
+          <input type="email" name="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div id="subscription-status"></div>
+      </div>
+    </main>
+    <!-- Right Vertical Ad -->
+    <aside class="vertical-ad right-ad">
+      Google Ad Placeholder (Right)
+    </aside>
+  </div>
+
+  <!-- Bottom Horizontal Ad -->
+  <div class="ad-horizontal bottom-ad">
+    Google Ad Placeholder (Bottom)
+  </div>
+
+  <!-- Firebase (Optional) - Uncomment and configure if using Firebase for subscriptions -->
+  <!--
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-  
   <script>
-    // Replace with your actual Firebase configuration
+    // Your Firebase configuration here
     var firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
@@ -117,17 +125,18 @@
       messagingSenderId: "YOUR_SENDER_ID",
       appId: "YOUR_APP_ID"
     };
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore();
-    
+  </script>
+  -->
+  <script>
     document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var email = this.email.value;
-      
       document.getElementById('subscription-status').innerText = "Processing your subscription...";
-      
-      // Write the subscription data to Firestore
+
+      // Uncomment the following if using Firebase
+      /*
       db.collection("subscriptions").add({
         email: email,
         subscribedAt: new Date().toISOString()
@@ -140,6 +149,13 @@
         console.error("Error adding subscription: ", error);
         document.getElementById('subscription-status').innerText = "Subscription failed. Please try again.";
       });
+      */
+      
+      // Simulated subscription for static site
+      setTimeout(function() {
+        document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
+        document.getElementById('newsletter-form').reset();
+      }, 1000);
     });
   </script>
 </body>
