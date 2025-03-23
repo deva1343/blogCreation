@@ -1,34 +1,105 @@
 [
   {
-    "id": "hydration-and-health",
-    "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
-    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/water-hydration.jpg",
-    "summary": "Understanding the importance of hydration and daily water intake recommendations. Discover why water is essential for your overall health and get insights into optimal hydration levels.",
-    "content": "Full article content goes here. You can use all the text from the original article: \n\nEnsuring adequate daily water intake is essential for maintaining optimal health. The National Academies of Sciences, Engineering, and Medicine recommends that men consume approximately 3.7 liters (about 13 cups) of water daily, while women should aim for 2.7 liters (about 9 cups). These recommendations encompass all fluids consumed throughout the day, including beverages and foods with high water content. \n\nFactors such as physical activity, environmental conditions, and overall health influence individual water needs. Staying properly hydrated regulates body temperature, supports digestion, enhances physical performance, and promotes cognitive function. \n\nTips include carrying a water bottle, monitoring urine color, and incorporating water-rich foods into your diet.",
-    "category": "Health & Fitness"
+    "id": "vegan-buddha-bowls",
+    "title": "10 Vegan Buddha Bowl Recipes for a Nutritious Meal",
+    "summary": "Explore vibrant, nutrient-packed vegan Buddha bowls perfect for any meal.",
+    "author": "Hippie and Healthy",
+    "date": "2024-04-10",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/04/vegan-buddha-bowls.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Buddha bowls are a colorful way to combine grains, veggies, and plant-based proteins. These 10 recipes include options like teriyaki tofu, quinoa salads, and spicy chickpea variations."
+      }
+    ],
+    "tags": ["vegan", "buddha bowl", "meal prep"],
+    "url": "https://hippieandhealthy.com/vegan-buddha-bowls/"
   },
   {
-    "id": "healthy-breakfast",
-    "title": "5 Healthy Breakfast Recipes",
-    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/healthy-breakfast.jpg",
-    "summary": "Start your day with these nutritious breakfast ideas that are both delicious and easy to make.",
-    "content": "Full detailed article content for healthy breakfast recipes goes here...",
-    "category": "Food & Recipes"
+    "id": "gluten-free-pancakes",
+    "title": "Easy Gluten-Free Pancakes for a Delicious Breakfast",
+    "summary": "Fluffy gluten-free pancakes that everyone will love!",
+    "author": "Hippie and Healthy",
+    "date": "2024-04-08",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/04/gluten-free-pancakes.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Made with almond flour and oat milk, these pancakes are light, fluffy, and perfect for those avoiding gluten. Top with fresh berries or maple syrup."
+      }
+    ],
+    "tags": ["gluten-free", "breakfast", "pancakes"],
+    "url": "https://hippieandhealthy.com/gluten-free-pancakes/"
   },
   {
-    "id": "home-workout",
-    "title": "10-Minute Home Workout Routine",
-    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/home-workout.jpg",
-    "summary": "A quick and effective workout routine you can do at home to stay fit and healthy.",
-    "content": "Full detailed article content for a 10-minute home workout routine goes here...",
-    "category": "Health & Fitness"
+    "id": "detox-green-smoothie",
+    "title": "3-Day Detox Green Smoothie Challenge",
+    "summary": "Reset your body with these cleansing green smoothie recipes.",
+    "author": "Hippie and Healthy",
+    "date": "2024-04-05",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/04/green-smoothie.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Kale, spinach, pineapple, and ginger come together in these refreshing smoothies. Perfect for a post-holiday reset or a quick energy boost."
+      }
+    ],
+    "tags": ["detox", "smoothie", "cleansing"],
+    "url": "https://hippieandhealthy.com/detox-green-smoothie/"
   },
   {
-    "id": "cozy-living",
-    "title": "How to Create a Cozy Living Space",
-    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/cozy-living.jpg",
-    "summary": "Transform your home into a warm and inviting living space with these simple tips and ideas.",
-    "content": "Full detailed article content for creating a cozy living space goes here...",
-    "category": "Lifestyle"
+    "id": "chia-pudding",
+    "title": "Overnight Chia Pudding: 5 Flavor Variations",
+    "summary": "Meal-prep these easy chia puddings for a quick breakfast or snack.",
+    "author": "Hippie and Healthy",
+    "date": "2024-04-02",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/04/chia-pudding.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "From chocolate-banana to mango-coconut, these chia pudding recipes are rich in omega-3s and fiber. Just mix and refrigerate overnight!"
+      }
+    ],
+    "tags": ["chia", "meal prep", "breakfast"],
+    "url": "https://hippieandhealthy.com/chia-pudding/"
+  },
+  {
+    "id": "vegan-meal-prep",
+    "title": "Vegan Meal Prep Ideas for Busy Weeks",
+    "summary": "Save time with these protein-packed vegan lunches and dinners.",
+    "author": "Hippie and Healthy",
+    "date": "2024-03-30",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/vegan-meal-prep.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Learn how to batch-cook lentil curries, roasted veggie grain bowls, and tofu stir-fries. Includes storage tips and flavor-boosting tricks."
+      }
+    ],
+    "tags": ["vegan", "meal prep", "plant-based"],
+    "url": "https://hippieandhealthy.com/vegan-meal-prep/"
+  },
+  // Add 15 more entries following the same pattern...
+  {
+    "id": "immune-boosting-soups",
+    "title": "5 Immune-Boosting Soups to Fight Cold Season",
+    "summary": "Warm up with these anti-inflammatory soups packed with healing spices.",
+    "author": "Hippie and Healthy",
+    "date": "2024-03-25",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/immune-soup.jpg",
+    "category": "Food & Recipes",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Turmeric, ginger, and garlic star in these comforting recipes like coconut curry lentil soup and hearty vegetable minestrone."
+      }
+    ],
+    "tags": ["soup", "immunity", "anti-inflammatory"],
+    "url": "https://hippieandhealthy.com/immune-boosting-soups/"
   }
 ]
