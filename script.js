@@ -9,14 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
 function displayPosts(posts, category) {
   const container = document.getElementById("posts-container");
   container.innerHTML = "";
-
+  
   posts.forEach(post => {
-    // Show all posts or only those matching the selected category
+    // Filter posts based on category, or show all when category === 'all'
     if (category === 'all' || post.category === category) {
       const card = document.createElement("div");
       card.className = "post-card";
       
-      // Create an image element if available
       let imageHtml = "";
       if (post.image) {
         imageHtml = `<img src="${post.image}" alt="${post.title}">`;
