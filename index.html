@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="loadPosts('all')">Home</a></li>
-                <li><a href="#" onclick="loadPosts('Food & Recipes')">Food & Recipes</a></li>
-                <li><a href="#" onclick="loadPosts('Health & Fitness')">Health & Fitness</a></li>
-                <li><a href="#" onclick="loadPosts('Lifestyle')">Lifestyle</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="newsletter.html">Newsletter</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <h1>My Blog</h1>
-    <div id="posts"></div>
-
-    <script>
-        async function loadPosts(category = 'all') {
-            try {
-                let response = await fetch('posts.json');
-                if (!response.ok) throw new Error("File not found");
-
-                let posts = await response.json();
-                let postsContainer = document.getElementById('posts');
-                postsContainer.innerHTML = ''; // Clear previous content
-
-                posts.forEach(post => {
-                    if (category === 'all' || post.category === category) {
-                        let postElement = document.createElement('div');
-                        postElement.className = 'post';
-                        postElement.innerHTML = `
-                            <h2>${post.title}</h2>
-                            <p>${post.summary}</p>
-                            <a href="${post.url}" target="_blank">Read More</a>
-                        `;
-                        postsContainer.appendChild(postElement);
-                    }
-                });
-            } catch (error) {
-                console.error("Error loading posts:", error);
-            }
-        }
-
-        loadPosts(); // Load all posts on page load
-    </script>
+  <nav>
+    <ul>
+      <li><a href="index.html" onclick="filterPosts('all')">Home</a></li>
+      <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+      <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+      <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Google Ad Space at the top -->
+  <div class="ad-space">
+    <!-- Insert your Google AdSense code here -->
+    Google Ad Placeholder (Top)
+  </div>
+  
+  <!-- Posts Container: Home shows posts as cards -->
+  <section id="posts-container"></section>
+  
+  <!-- Google Ad Space at the bottom -->
+  <div class="ad-space">
+    <!-- Insert your Google AdSense code here -->
+    Google Ad Placeholder (Bottom)
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
