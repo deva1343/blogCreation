@@ -28,7 +28,8 @@ nav ul li a {
   font-size: 18px;
 }
 
-.ad-space {
+/* Horizontal ad spaces */
+.ad-space.horizontal-ad {
   margin: 20px auto;
   max-width: 800px;
   background-color: #e0e0e0;
@@ -38,12 +39,37 @@ nav ul li a {
   color: #555;
 }
 
-#posts-container {
-  max-width: 800px;
+/* Container for vertical ads and posts */
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   margin: 20px auto;
-  padding: 20px;
+  max-width: 1200px;
 }
 
+/* Vertical ad styling */
+.vertical-ad {
+  width: 150px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  text-align: center;
+  color: #555;
+  margin: 0 10px;
+  min-height: 300px;
+}
+
+/* Posts container styling */
+#posts-container {
+  flex: 1;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Post Card Styles */
 .post-card {
   background: white;
   border-radius: 5px;
