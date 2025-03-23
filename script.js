@@ -11,7 +11,7 @@ function displayPosts(posts, category) {
   container.innerHTML = "";
   
   posts.forEach(post => {
-    // Filter posts based on category, or show all when category === 'all'
+    // Filter posts based on category or show all when 'all' is selected
     if (category === 'all' || post.category === category) {
       const card = document.createElement("div");
       card.className = "post-card";
