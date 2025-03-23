@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+      <li><a href="index.html" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+      <li><a href="index.html" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+    </ul>
+  </nav>
+  
+  <div id="post-detail" class="post-detail"></div>
+  
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    
+    function loadPost(postId) {
+      fetch("posts.json")
+        .then(response => response.json())
+        .then(posts => {
+          const post = posts.find(p => p.id === postId);
+          if (post) {
+            const detailContainer = document.getElementById("post-detail");
+            let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : '';
+            detailContainer.innerHTML = `
+              ${imageHtml}
+              <h1>${post.title}</h1>
+              <p>${post.content}</p>
+              <a href="index.html">Back to Home</a>
+            `;
+          } else {
+            document.getElementById("post-detail").innerHTML = "<p>Post not found.</p>";
+          }
+        })
+        .catch(error => console.error("Error loading post:", error));
+    }
+    
+    const postId = getQueryParam("id");
+    if (postId) {
+      loadPost(postId);
+    } else {
+      document.getElementById("post-detail").innerHTML = "<p>No post specified.</p>";
+    }
+  </script>
+</body>
+</html>
