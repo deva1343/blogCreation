@@ -1,64 +1,83 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+nav {
+  background-color: #4a90e2;
+  padding: 10px 0;
+  text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    background: #007BFF;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+  display: inline-block;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-nav ul li a:hover {
-    background: #0056b3;
-    border-radius: 5px;
+.ad-space {
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  color: #555;
 }
 
-h1 {
-    color: #333;
+#posts-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
 }
 
-.post {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px auto;
-    width: 50%;
-    text-align: left;
-    background: #f9f9f9;
-    border-radius: 5px;
+.post-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.post h2 {
-    color: #007BFF;
+.post-card img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.post a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #fff;
-    background: #007BFF;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
+.post-content {
+  padding: 15px;
 }
 
-.post a:hover {
-    background: #0056b3;
+.post-content h2 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.post-content p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.post-content .read-more {
+  text-decoration: none;
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
 }
