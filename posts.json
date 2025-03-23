@@ -31,5 +31,48 @@
         "summary": "Transform your home into a warm, inviting space with these tips.",
         "content": "Full detailed article content for creating a cozy living space goes here...",
         "category": "Lifestyle"
-    }
+    },
+
+ {
+    "id": "hydration-and-health",
+    "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
+    "image": "assets/hydration.jpg",
+    "summary": "Ever wondered if you're drinking enough water? Explore the science of hydration and discover how proper water intake can transform your health.",
+    "content": "Water is not only essential for survival but also a key component for optimal health. Have you ever wondered why your body craves water or what happens when you're not properly hydrated? This post dives deep into the science of hydration, explaining how water supports everything from cognitive function to physical performance. Learn about the subtle signs of dehydration and discover practical tips for monitoring your water intake. By understanding the intricate relationship between water and wellness, you'll be inspired to rethink your daily hydration habits.",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "organic-vs-non-organic",
+    "title": "Organic vs. Non-Organic Foods: Understanding the Differences and Benefits",
+    "image": "assets/organic.jpg",
+    "summary": "Are organic foods really better for you? Uncover the surprising differences between organic and non-organic produce and decide what’s best for your health.",
+    "content": "The debate between organic and non-organic foods is one that piques curiosity among health enthusiasts. What exactly makes a food 'organic'? Does it truly offer more nutritional benefits, or is it simply a matter of marketing? In this post, we explore the differences in farming practices, the use of pesticides, and the environmental impact of both organic and non-organic foods. Through intriguing facts and scientific insights, you’ll learn how these differences might affect your health and discover tips on making informed choices at the grocery store.",
+    "category": "Food & Recipes"
+  },
+  {
+    "id": "meal-planning-strategies",
+    "title": "Meal Planning Strategies for a Busy Lifestyle: Save Time and Eat Healthier",
+    "image": "assets/meal-planning.jpg",
+    "summary": "Transform your hectic schedule with innovative meal planning strategies that save time and boost your health.",
+    "content": "For busy individuals, meal planning often seems like a daunting task. But what if it could be the secret to not only saving time but also eating healthier? This post explores creative and practical meal planning techniques that turn a stressful routine into a structured, enjoyable process. Discover how to plan meals that cater to your unique schedule, incorporate leftovers creatively, and even batch cook for the week. By integrating these strategies, you'll find that meal planning can lead to a more balanced, nutritious diet while reducing both food waste and last-minute stress.",
+    "category": "Food & Recipes"
+  },
+  {
+    "id": "impact-of-sleep",
+    "title": "The Impact of Sleep on Health and Wellness: What You Need to Know",
+    "image": "assets/sleep.jpg",
+    "summary": "Curious about how sleep shapes your overall well-being? Delve into the critical role of sleep and uncover practical tips for better rest.",
+    "content": "Sleep is the unsung hero of a healthy lifestyle, yet many of us underestimate its importance. How does sleep affect your mood, metabolism, and cognitive performance? This post takes you on a fascinating journey into the world of sleep science, revealing the profound impacts of both quality sleep and sleep deprivation. Explore cutting-edge research on sleep cycles, discover strategies to improve sleep quality, and learn why even small changes in your sleep routine can yield significant health benefits. Prepare to be amazed at how prioritizing sleep could be the key to unlocking a healthier, more vibrant life.",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "healthy-breakfast-recipes",
+    "title": "5 Quick and Healthy Breakfast Recipes for an Energetic Start to Your Day",
+    "image": "assets/breakfast.jpg",
+    "summary": "Kickstart your morning with these innovative breakfast recipes that promise energy and vitality in every bite.",
+    "content": "Breakfast is the cornerstone of a productive day—but it doesn’t have to be boring. This post offers five creative and healthy breakfast recipes designed for busy mornings. From nutrient-packed smoothie bowls to protein-rich egg dishes, each recipe is crafted to fuel your body and spark your culinary curiosity. Learn the secrets behind these quick, delicious meals that not only save time but also provide a balanced mix of essential nutrients. Let your taste buds explore a new world of flavors, and start your day energized and ready to conquer any challenge.",
+    "category": "Food & Recipes"
+  }
+ 
+
 ]
