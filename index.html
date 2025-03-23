@@ -2,15 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Blog Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Post</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styling for the post page */
+    .post-detail {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .post-detail img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .post-detail h1 {
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+    .post-detail .post-content {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .back-button {
+      display: inline-block;
+      background: #2980b9;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .back-button:hover {
+      background: #1c6391;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <ul class="nav-list">
-        <li><a href="index.html" onclick="filterPosts('all')">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
         <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
         <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
@@ -21,31 +59,50 @@
     </nav>
   </header>
   
-  <!-- Top Horizontal Ad Space -->
-  <div class="ad-horizontal top-ad">
-    <!-- Insert your Google AdSense code here -->
-    Google Ad Placeholder (Top)
-  </div>
+  <main id="post-detail" class="post-detail">
+    <!-- The post content will be loaded here dynamically -->
+  </main>
   
-  <div class="main-container">
-    <!-- Main Content (70% width on large screens) -->
-    <main id="posts-container" class="content">
-      <!-- Post cards will be dynamically loaded here -->
-    </main>
-    
-    <!-- Right Vertical Ad (30% width on large screens) -->
-    <aside class="vertical-ad right-ad">
-      <!-- Insert your Google AdSense code here -->
-      Google Ad Placeholder (Right)
-    </aside>
-  </div>
-  
-  <!-- Bottom Horizontal Ad Space -->
-  <div class="ad-horizontal bottom-ad">
-    <!-- Insert your Google AdSense code here -->
-    Google Ad Placeholder (Bottom)
-  </div>
-  
-  <script src="script.js"></script>
+  <script>
+    // Utility function to get query parameter by name
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    // Load the post based on the id query parameter
+    function loadPost(postId) {
+      fetch("posts.json")
+        .then(response => response.json())
+        .then(posts => {
+          // Find the post with matching id
+          const post = posts.find(p => p.id === postId);
+          const container = document.getElementById("post-detail");
+          if (post) {
+            let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+            container.innerHTML = `
+              ${imageHtml}
+              <h1>${post.title}</h1>
+              <div class="post-content">${post.content}</div>
+              <a class="back-button" href="index.html">Back to Home</a>
+            `;
+          } else {
+            container.innerHTML = "<p>Post not found.</p>";
+          }
+        })
+        .catch(error => {
+          console.error("Error loading post:", error);
+          document.getElementById("post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
+        });
+    }
+
+    // Get the post id from the URL and load the post
+    const postId = getQueryParam("id");
+    if (postId) {
+      loadPost(postId);
+    } else {
+      document.getElementById("post-detail").innerHTML = "<p>No post specified.</p>";
+    }
+  </script>
 </body>
 </html>
