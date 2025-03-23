@@ -3,46 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us | dpal.site</title>
+  <title>dPal - Contact Us</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Inline styles for contact page (move to style.css if desired) */
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      padding: 20px;
-      text-align: center;
-      color: #ecf0f1;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+    /* Additional styling for contact page */
     .contact-container {
       max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
+      margin: 20px auto;
+      padding: 20px;
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .contact-container h2 {
       color: #2980b9;
       margin-bottom: 20px;
       text-align: center;
     }
-    .contact-details {
-      margin-bottom: 30px;
-    }
     .contact-details p {
-      margin: 5px 0;
       font-size: 16px;
+      margin: 10px 0;
     }
     form {
       display: flex;
@@ -69,54 +49,67 @@
     form button:hover {
       background-color: #1c6391;
     }
-    .map-placeholder {
-      background-color: #ecf0f1;
-      height: 300px;
-      margin-top: 20px;
-      border: 1px solid #bdc3c7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7f8c8d;
-      font-size: 18px;
-    }
   </style>
 </head>
 <body>
+  <!-- Constant Header -->
   <header>
-    <h1>Contact Us</h1>
-  </header>
-  <main>
-    <div class="contact-container">
-      <h2>Get in Touch</h2>
-      <div class="contact-details">
-        <p><strong>Email:</strong> info@dpal.site</p>
-        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-        <p><strong>Address:</strong> 123 Wellness Way, Healthy City, Country</p>
-      </div>
-      
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      
-      <!-- Message area for form submission feedback -->
-      <div id="form-status"></div>
-      
-      <!-- Map placeholder (replace with an embedded map if desired) -->
-      <div class="map-placeholder">
-        Map Placeholder
-      </div>
+    <div class="header-container">
+      <div class="logo"><a href="index.html">dPal</a></div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+      </nav>
     </div>
-  </main>
-  
+  </header>
+
+  <!-- Top Horizontal Ad -->
+  <div class="ad-horizontal top-ad">
+    Google Ad Placeholder (Top)
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Contact Content (70% width on large screens) -->
+    <main class="content">
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <div class="contact-details">
+          <p><strong>Email:</strong> info@dpal.site</p>
+          <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+          <p><strong>Address:</strong> 123 Wellness Way, Healthy City, Country</p>
+        </div>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div id="form-status"></div>
+      </div>
+    </main>
+    <!-- Right Vertical Ad -->
+    <aside class="vertical-ad right-ad">
+      Google Ad Placeholder (Right)
+    </aside>
+  </div>
+
+  <!-- Bottom Horizontal Ad -->
+  <div class="ad-horizontal bottom-ad">
+    Google Ad Placeholder (Bottom)
+  </div>
+
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      // Simulate form submission
-      document.getElementById('form-status').innerText = "Thank you for reaching out! We will get back to you soon.";
+      document.getElementById('form-status').innerText = "Thank you for reaching out! We'll contact you soon.";
       this.reset();
     });
   </script>
