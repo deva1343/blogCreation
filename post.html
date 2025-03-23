@@ -2,52 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dPal - Blog Post</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styling for the post detail page */
+    .post-detail {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .post-detail img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .post-detail h1 {
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+    .post-detail .post-content {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .back-button {
+      display: inline-block;
+      background: #2980b9;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .back-button:hover {
+      background: #1c6391;
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
-      <li><a href="index.html" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
-      <li><a href="index.html" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="newsletter.html">Newsletter</a></li>
-    </ul>
-  </nav>
-  
-  <div id="post-detail" class="post-detail"></div>
-  
+  <!-- Constant Header (Same as in index.html) -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">dPal</a>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Horizontal Ad -->
+  <div class="ad-horizontal top-ad">
+    <!-- Insert your Google AdSense code here -->
+    Google Ad Placeholder (Top)
+  </div>
+
+  <!-- Main Post Container -->
+  <div class="main-container">
+    <!-- Post Content (occupies full width on small screens; 70% on large screens) -->
+    <main id="post-detail" class="content">
+      <!-- Post content will be dynamically loaded here -->
+    </main>
+    <!-- Right Vertical Ad (30% on large screens) -->
+    <aside class="vertical-ad right-ad">
+      <!-- Insert your Google AdSense code here -->
+      Google Ad Placeholder (Right)
+    </aside>
+  </div>
+
+  <!-- Bottom Horizontal Ad -->
+  <div class="ad-horizontal bottom-ad">
+    <!-- Insert your Google AdSense code here -->
+    Google Ad Placeholder (Bottom)
+  </div>
+
   <script>
+    // Utility to get query parameter from URL
     function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
     }
-    
+
+    // Load and display the post based on the id parameter
     function loadPost(postId) {
       fetch("posts.json")
         .then(response => response.json())
         .then(posts => {
           const post = posts.find(p => p.id === postId);
+          const container = document.getElementById("post-detail");
           if (post) {
-            const detailContainer = document.getElementById("post-detail");
-            let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : '';
-            detailContainer.innerHTML = `
+            let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+            container.innerHTML = `
               ${imageHtml}
               <h1>${post.title}</h1>
-              <p>${post.content}</p>
-              <a href="index.html">Back to Home</a>
+              <div class="post-content">${post.content}</div>
+              <a class="back-button" href="index.html">Back to Home</a>
             `;
           } else {
-            document.getElementById("post-detail").innerHTML = "<p>Post not found.</p>";
+            container.innerHTML = "<p>Post not found.</p>";
           }
         })
-        .catch(error => console.error("Error loading post:", error));
+        .catch(error => {
+          console.error("Error loading post:", error);
+          document.getElementById("post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
+        });
     }
-    
+
     const postId = getQueryParam("id");
     if (postId) {
       loadPost(postId);
