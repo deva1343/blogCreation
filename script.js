@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Load all posts on page load
-  fetch("posts.json")
-    .then(response => response.json())
-    .then(data => displayPosts(data, 'all'))
-    .catch(error => console.error("Error loading posts:", error));
+  // Load all posts on page load for index.html
+  if (document.getElementById("posts-container")) {
+    fetch("posts.json")
+      .then(response => response.json())
+      .then(data => displayPosts(data, 'all'))
+      .catch(error => console.error("Error loading posts:", error));
+  }
 });
 
 function displayPosts(posts, category) {
