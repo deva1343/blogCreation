@@ -7,27 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadPosts('all')">Home</a></li>
+                <li><a href="#" onclick="loadPosts('Food & Recipes')">Food & Recipes</a></li>
+                <li><a href="#" onclick="loadPosts('Health & Fitness')">Health & Fitness</a></li>
+                <li><a href="#" onclick="loadPosts('Lifestyle')">Lifestyle</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <h1>My Blog</h1>
     <div id="posts"></div>
 
     <script>
-        async function loadPosts() {
+        async function loadPosts(category = 'all') {
             try {
                 let response = await fetch('posts.json');
-                let posts = await response.json();
+                if (!response.ok) throw new Error("File not found");
 
+                let posts = await response.json();
                 let postsContainer = document.getElementById('posts');
+                postsContainer.innerHTML = ''; // Clear previous content
+
                 posts.forEach(post => {
-                    let postElement = document.createElement('div');
-                    postElement.innerHTML = `<h2>${post.title}</h2><p>${post.summary}</p>`;
-                    postsContainer.appendChild(postElement);
+                    if (category === 'all' || post.category === category) {
+                        let postElement = document.createElement('div');
+                        postElement.className = 'post';
+                        postElement.innerHTML = `
+                            <h2>${post.title}</h2>
+                            <p>${post.summary}</p>
+                            <a href="${post.url}" target="_blank">Read More</a>
+                        `;
+                        postsContainer.appendChild(postElement);
+                    }
                 });
             } catch (error) {
                 console.error("Error loading posts:", error);
             }
         }
 
-        loadPosts();
+        loadPosts(); // Load all posts on page load
     </script>
 </body>
 </html>
