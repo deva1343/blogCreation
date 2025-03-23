@@ -1,20 +1,34 @@
 [
-    {
-        "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
-        "summary": "Learn about daily water intake requirements for optimal health.",
-        "url": "https://hippieandhealthy.com/hydration-and-health-how-much-water-should-you-really-drink-daily/",
-        "category": "Health & Fitness"
-    },
-    {
-        "title": "5 Easy and Healthy Breakfast Recipes",
-        "summary": "Start your day with these quick and nutritious breakfast ideas.",
-        "url": "https://hippieandhealthy.com/5-easy-and-healthy-breakfast-recipes/",
-        "category": "Food & Recipes"
-    },
-    {
-        "title": "10 Simple Lifestyle Changes for a Happier Life",
-        "summary": "Make small changes that lead to a big impact on your happiness and well-being.",
-        "url": "https://hippieandhealthy.com/10-simple-lifestyle-changes/",
-        "category": "Lifestyle"
-    }
+  {
+    "id": "hydration-and-health",
+    "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/water-hydration.jpg",
+    "summary": "Understanding the importance of hydration and daily water intake recommendations. Discover why water is essential for your overall health and get insights into optimal hydration levels.",
+    "content": "Full article content goes here. You can use all the text from the original article: \n\nEnsuring adequate daily water intake is essential for maintaining optimal health. The National Academies of Sciences, Engineering, and Medicine recommends that men consume approximately 3.7 liters (about 13 cups) of water daily, while women should aim for 2.7 liters (about 9 cups). These recommendations encompass all fluids consumed throughout the day, including beverages and foods with high water content. \n\nFactors such as physical activity, environmental conditions, and overall health influence individual water needs. Staying properly hydrated regulates body temperature, supports digestion, enhances physical performance, and promotes cognitive function. \n\nTips include carrying a water bottle, monitoring urine color, and incorporating water-rich foods into your diet.",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "healthy-breakfast",
+    "title": "5 Healthy Breakfast Recipes",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/healthy-breakfast.jpg",
+    "summary": "Start your day with these nutritious breakfast ideas that are both delicious and easy to make.",
+    "content": "Full detailed article content for healthy breakfast recipes goes here...",
+    "category": "Food & Recipes"
+  },
+  {
+    "id": "home-workout",
+    "title": "10-Minute Home Workout Routine",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/home-workout.jpg",
+    "summary": "A quick and effective workout routine you can do at home to stay fit and healthy.",
+    "content": "Full detailed article content for a 10-minute home workout routine goes here...",
+    "category": "Health & Fitness"
+  },
+  {
+    "id": "cozy-living",
+    "title": "How to Create a Cozy Living Space",
+    "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/cozy-living.jpg",
+    "summary": "Transform your home into a warm and inviting living space with these simple tips and ideas.",
+    "content": "Full detailed article content for creating a cozy living space goes here...",
+    "category": "Lifestyle"
+  }
 ]
