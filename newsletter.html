@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dPal - Newsletter</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Additional styling for newsletter page */
+    .newsletter-section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: #2980b9;
+      margin-bottom: 15px;
+    }
+    .newsletter-section p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .newsletter-section form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .newsletter-section input[type="email"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .newsletter-section button {
+      padding: 10px 20px;
+      background-color: #2980b9;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .newsletter-section button:hover {
+      background-color: #1c6391;
+    }
+    #subscription-status {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <!-- Constant Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo"><a href="index.html">dPal</a></div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
+          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
+          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Horizontal Ad -->
+  <div class="ad-horizontal top-ad">
+    Google Ad Placeholder (Top)
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Newsletter Content (70% width on large screens) -->
+    <main class="content">
+      <div class="newsletter-section">
+        <h2>Join the Health and Wealth Community</h2>
+        <p>
+          Get daily health tips, natural wellness advice, and holistic living inspiration delivered straight to your inbox!
+          From nutrition and mindfulness to self-care and sustainable living, we’re here to help you live your healthiest, happiest life—naturally.
+        </p>
+        <form id="newsletter-form">
+          <input type="email" name="email" placeholder="Enter your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div id="subscription-status"></div>
+      </div>
+    </main>
+    <!-- Right Vertical Ad -->
+    <aside class="vertical-ad right-ad">
+      Google Ad Placeholder (Right)
+    </aside>
+  </div>
+
+  <!-- Bottom Horizontal Ad -->
+  <div class="ad-horizontal bottom-ad">
+    Google Ad Placeholder (Bottom)
+  </div>
+
+  <!-- Firebase (Optional) - Uncomment and configure if using Firebase for subscriptions -->
+  <!--
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script>
+    // Your Firebase configuration here
+    var firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+  </script>
+  -->
+  <script>
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = this.email.value;
+      document.getElementById('subscription-status').innerText = "Processing your subscription...";
+
+      // Uncomment the following if using Firebase
+      /*
+      db.collection("subscriptions").add({
+        email: email,
+        subscribedAt: new Date().toISOString()
+      })
+      .then(function() {
+        document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
+        document.getElementById('newsletter-form').reset();
+      })
+      .catch(function(error) {
+        console.error("Error adding subscription: ", error);
+        document.getElementById('subscription-status').innerText = "Subscription failed. Please try again.";
+      });
+      */
+      
+      // Simulated subscription for static site
+      setTimeout(function() {
+        document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
+        document.getElementById('newsletter-form').reset();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
