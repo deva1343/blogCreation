@@ -1,39 +1,5 @@
 [
-   
-    {
-        "id": "hydration-and-health",
-        "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
-        "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/water-hydration.jpg",
-        "summary": "A quick look at why hydration is vital and how much water you should be drinking every day.",
-        "content": "Full article content goes here. You can include all the detailed text from the original article along with formatting, paragraphs, and images as needed.",
-        "category": "Health & Fitness"
-    },
-    {
-        "id": "healthy-breakfast",
-        "title": "5 Healthy Breakfast Recipes",
-        "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/healthy-breakfast.jpg",
-        "summary": "Delicious and nutritious breakfast ideas to kickstart your day.",
-        "content": "Full detailed article content for healthy breakfast recipes goes here...",
-        "category": "Food & Recipes"
-    },
-    {
-        "id": "home-workout",
-        "title": "10-Minute Home Workout Routine",
-        "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/home-workout.jpg",
-        "summary": "A fast, effective workout you can do at home to stay fit.",
-        "content": "Full detailed article content for a 10-minute home workout routine goes here...",
-        "category": "Health & Fitness"
-    },
-    {
-        "id": "cozy-living",
-        "title": "How to Create a Cozy Living Space",
-        "image": "https://hippieandhealthy.com/wp-content/uploads/2024/03/cozy-living.jpg",
-        "summary": "Transform your home into a warm, inviting space with these tips.",
-        "content": "Full detailed article content for creating a cozy living space goes here...",
-        "category": "Lifestyle"
-    },
-
- {
+  {
     "id": "hydration-and-health",
     "title": "Hydration and Health: How Much Water Should You Really Drink Daily?",
     "image": "assets/hydration.jpg",
@@ -46,7 +12,7 @@
     "title": "Organic vs. Non-Organic Foods: Understanding the Differences and Benefits",
     "image": "assets/organic.jpg",
     "summary": "Are organic foods really better for you? Uncover the surprising differences between organic and non-organic produce and decide what’s best for your health.",
-    "content": "The debate between organic and non-organic foods is one that piques curiosity among health enthusiasts. What exactly makes a food 'organic'? Does it truly offer more nutritional benefits, or is it simply a matter of marketing? In this post, we explore the differences in farming practices, the use of pesticides, and the environmental impact of both organic and non-organic foods. Through intriguing facts and scientific insights, you’ll learn how these differences might affect your health and discover tips on making informed choices at the grocery store.",
+    "content": "The debate between organic and non-organic foods piques the curiosity of health enthusiasts everywhere. What exactly makes a food 'organic'? Does it truly offer more nutritional benefits, or is it simply a matter of how it's grown? In this post, we explore the differences in farming practices, pesticide usage, and environmental impact between organic and non-organic foods. With intriguing facts and scientific insights, you'll learn how these differences might affect your health and be empowered to make informed choices at the grocery store.",
     "category": "Food & Recipes"
   },
   {
@@ -54,7 +20,7 @@
     "title": "Meal Planning Strategies for a Busy Lifestyle: Save Time and Eat Healthier",
     "image": "assets/meal-planning.jpg",
     "summary": "Transform your hectic schedule with innovative meal planning strategies that save time and boost your health.",
-    "content": "For busy individuals, meal planning often seems like a daunting task. But what if it could be the secret to not only saving time but also eating healthier? This post explores creative and practical meal planning techniques that turn a stressful routine into a structured, enjoyable process. Discover how to plan meals that cater to your unique schedule, incorporate leftovers creatively, and even batch cook for the week. By integrating these strategies, you'll find that meal planning can lead to a more balanced, nutritious diet while reducing both food waste and last-minute stress.",
+    "content": "For busy individuals, meal planning often seems like a daunting task. But what if it could be the secret to not only saving time but also eating healthier? This post explores creative and practical meal planning techniques that turn a stressful routine into a structured, enjoyable process. Discover how to plan meals that cater to your unique schedule, creatively incorporate leftovers, and even batch cook for the week. With these strategies, you'll achieve a more balanced, nutritious diet while reducing both food waste and last-minute stress.",
     "category": "Food & Recipes"
   },
   {
@@ -62,17 +28,15 @@
     "title": "The Impact of Sleep on Health and Wellness: What You Need to Know",
     "image": "assets/sleep.jpg",
     "summary": "Curious about how sleep shapes your overall well-being? Delve into the critical role of sleep and uncover practical tips for better rest.",
-    "content": "Sleep is the unsung hero of a healthy lifestyle, yet many of us underestimate its importance. How does sleep affect your mood, metabolism, and cognitive performance? This post takes you on a fascinating journey into the world of sleep science, revealing the profound impacts of both quality sleep and sleep deprivation. Explore cutting-edge research on sleep cycles, discover strategies to improve sleep quality, and learn why even small changes in your sleep routine can yield significant health benefits. Prepare to be amazed at how prioritizing sleep could be the key to unlocking a healthier, more vibrant life.",
+    "content": "Sleep is often the unsung hero of a healthy lifestyle, yet many of us underestimate its importance. How does sleep affect your mood, metabolism, and cognitive performance? This post takes you on a fascinating journey into sleep science, revealing the profound impacts of quality sleep—and the consequences of sleep deprivation. Explore cutting-edge research, discover strategies to improve sleep quality, and learn why even small adjustments in your sleep routine can yield significant health benefits. Prepare to be amazed at how prioritizing sleep can unlock a healthier, more vibrant life.",
     "category": "Health & Fitness"
   },
   {
     "id": "healthy-breakfast-recipes",
     "title": "5 Quick and Healthy Breakfast Recipes for an Energetic Start to Your Day",
     "image": "assets/breakfast.jpg",
-    "summary": "Kickstart your morning with these innovative breakfast recipes that promise energy and vitality in every bite.",
-    "content": "Breakfast is the cornerstone of a productive day—but it doesn’t have to be boring. This post offers five creative and healthy breakfast recipes designed for busy mornings. From nutrient-packed smoothie bowls to protein-rich egg dishes, each recipe is crafted to fuel your body and spark your culinary curiosity. Learn the secrets behind these quick, delicious meals that not only save time but also provide a balanced mix of essential nutrients. Let your taste buds explore a new world of flavors, and start your day energized and ready to conquer any challenge.",
+    "summary": "Kickstart your morning with innovative breakfast recipes that promise energy and vitality in every bite.",
+    "content": "Breakfast is the cornerstone of a productive day—but it doesn’t have to be mundane. This post offers five creative, healthy breakfast recipes designed for busy mornings. From nutrient-packed smoothie bowls to protein-rich egg dishes, each recipe is crafted to fuel your body and spark your culinary curiosity. Discover the secrets behind these quick, delicious meals that not only save time but also deliver a balanced mix of essential nutrients. Let your taste buds explore a new world of flavors and start your day energized and ready to conquer any challenge.",
     "category": "Food & Recipes"
   }
- 
-
 ]
