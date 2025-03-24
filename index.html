@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Home</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/your-fontawesome-key.js" crossorigin="anonymous"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Constant Header -->
-  <header class="sticky-header">
+  <!-- Navigation Bar -->
+  <header>
     <div class="header-container">
       <div class="logo">
         <a href="index.html">dPal</a>
       </div>
       <nav>
         <ul class="nav-list">
-          <li><a href="index.html" onclick="filterPosts('all')">Home</a></li>
-          <li><a href="#" onclick="navigateToCategory('Food & Recipes')">Food & Recipes</a></li>
-          <li><a href="#" onclick="navigateToCategory('Health & Fitness')">Health & Fitness</a></li>
-          <li><a href="#" onclick="navigateToCategory('Lifestyle')">Lifestyle</a></li>
+          <li><a href="index.html" data-category="all">Home</a></li>
+          <li><a href="#" data-category="Food & Recipes">Food & Recipes</a></li>
+          <li><a href="#" data-category="Health & Fitness">Health & Fitness</a></li>
+          <li><a href="#" data-category="Lifestyle">Lifestyle</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="newsletter.html">Newsletter</a></li>
@@ -33,41 +33,34 @@
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Container -->
+  <!-- Main Content -->
   <div class="main-container">
-    <!-- Content Area -->
     <main id="posts-container" class="content">
-      <!-- Post cards will be dynamically loaded here -->
+      <!-- Blog posts dynamically loaded here -->
     </main>
 
     <!-- Right Sidebar -->
-    <aside class="right-sidebar">
-      <div class="ad-section">
-        Google Ad Placeholder (Right)
-      </div>
-
+    <aside class="sidebar">
+      <div class="ad-placeholder">Google Ad Placeholder (Right)</div>
+      
+      <!-- Social Media Links -->
       <div class="social-media">
-        <h3>Follow Us</h3>
-        <ul>
-          <li><a href="#" class="fa-brands fa-facebook"></a></li>
-          <li><a href="#" class="fa-brands fa-twitter"></a></li>
-          <li><a href="#" class="fa-brands fa-instagram"></a></li>
-          <li><a href="#" class="fa-brands fa-youtube"></a></li>
-        </ul>
+        <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="icons/twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
       </div>
 
-      <div id="recent-posts">
+      <!-- Recent Posts (Loaded dynamically) -->
+      <div class="recent-posts">
         <h3>Recent Posts</h3>
-        <ul></ul>
+        <ul id="recent-posts-list"></ul>
       </div>
     </aside>
   </div>
 
-  <!-- Bottom Horizontal Ad -->
+  <!-- Bottom Ad -->
   <div class="ad-horizontal bottom-ad">
     Google Ad Placeholder (Bottom)
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
