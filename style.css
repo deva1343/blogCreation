@@ -21,6 +21,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
+  min-height: 80px; /* Ensures a constant navbar height across pages */
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -122,7 +123,7 @@ header {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  object-position: top; /* Focus on top part of image */
+  object-position: top; /* Focus on the top part of the image */
   border-radius: 5px;
 }
 
@@ -240,7 +241,7 @@ footer {
   .post-main-image,
   .post-content img {
     max-width: 100%;
-    max-height: 150px; /* Constrain image height on mobile */
+    max-height: 100px; /* Further constrain image height on mobile */
     object-fit: contain;
   }
 }
