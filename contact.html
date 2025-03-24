@@ -6,7 +6,7 @@
   <title>dPal - Contact Us</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Additional styling for contact page */
+    /* Contact Page Styling */
     .contact-container {
       max-width: 800px;
       margin: 20px auto;
@@ -49,13 +49,24 @@
     form button:hover {
       background-color: #1c6391;
     }
+    #form-status {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #27ae60;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
   <!-- Constant Header -->
   <header>
     <div class="header-container">
-      <div class="logo"><a href="index.html">dPal</a></div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="dPal: Health Wealth Mind">
+        </a>
+      </div>
       <nav>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -70,14 +81,14 @@
     </div>
   </header>
 
-  <!-- Top Horizontal Ad -->
+  <!-- Top Ad -->
   <div class="ad-horizontal top-ad">
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Container -->
+  <!-- Main Layout -->
   <div class="main-container">
-    <!-- Contact Content (70% width on large screens) -->
+    <!-- Contact Form -->
     <main class="content">
       <div class="contact-container">
         <h2>Contact Us</h2>
@@ -95,13 +106,16 @@
         <div id="form-status"></div>
       </div>
     </main>
-    <!-- Right Vertical Ad -->
-    <aside class="vertical-ad right-ad">
-      Google Ad Placeholder (Right)
+
+    <!-- Sidebar for Ads -->
+    <aside class="sidebar">
+      <div class="ad-vertical right-ad">
+        Google Ad Placeholder (Right)
+      </div>
     </aside>
   </div>
 
-  <!-- Bottom Horizontal Ad -->
+  <!-- Bottom Ad -->
   <div class="ad-horizontal bottom-ad">
     Google Ad Placeholder (Bottom)
   </div>
@@ -113,5 +127,6 @@
       this.reset();
     });
   </script>
+
 </body>
 </html>
