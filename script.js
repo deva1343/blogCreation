@@ -1,30 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Load all posts on page load for index.html
   if (document.getElementById("posts-container")) {
     fetch("posts.json")
       .then(response => response.json())
-      .then(data => displayPosts(data, 'all'))
+      .then(data => {
+        displayPosts(data, 'all');
+        loadRecentPosts(data);
+      })
       .catch(error => console.error("Error loading posts:", error));
   }
 });
 
+// Function to display posts
 function displayPosts(posts, category) {
   const container = document.getElementById("posts-container");
   container.innerHTML = "";
-  
+
   posts.forEach(post => {
-    // Filter posts based on category or show all when 'all' is selected
     if (category === 'all' || post.category === category) {
       const card = document.createElement("div");
       card.className = "post-card";
-      
-      let imageHtml = "";
-      if (post.image) {
-        imageHtml = `<img src="${post.image}" alt="${post.title}">`;
-      }
-      
+
       card.innerHTML = `
-        ${imageHtml}
+        <img src="${post.image}" alt="${post.title}">
         <div class="post-content">
           <h2>${post.title}</h2>
           <p>${post.summary}</p>
@@ -36,9 +33,19 @@ function displayPosts(posts, category) {
   });
 }
 
-function filterPosts(category) {
-  fetch("posts.json")
-    .then(response => response.json())
-    .then(data => displayPosts(data, category))
-    .catch(error => console.error("Error filtering posts:", error));
+// Load recent posts
+function loadRecentPosts(posts) {
+  const recentContainer = document.getElementById("recent-posts").querySelector("ul");
+  recentContainer.innerHTML = "";
+
+  posts.slice(0, 5).forEach(post => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<img src="${post.image}" alt="${post.title}"><a href="post.html?id=${post.id}">${post.title}</a>`;
+    recentContainer.appendChild(listItem);
+  });
+}
+
+// Category Navigation Fix
+function navigateToCategory(category) {
+  displayPosts(posts, category);
 }
