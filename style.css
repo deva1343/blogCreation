@@ -7,12 +7,12 @@
 }
 
 html, body {
-  overflow-x: hidden;  /* Prevents horizontal scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   background-color: #F3F4F6;
   color: #111827;
 }
 
-/* Header (Modern Navbar) */
+/* Header / Navbar */
 header {
   background: #1E293B;
   padding: 15px 20px;
@@ -20,7 +20,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -32,7 +32,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Logo */
 .logo a {
   color: white;
   font-size: 24px;
@@ -40,7 +39,6 @@ header {
   font-weight: bold;
 }
 
-/* Navigation */
 .nav-list {
   list-style: none;
   display: flex;
@@ -67,77 +65,68 @@ header {
     flex-direction: column;
     text-align: center;
   }
-
   .nav-list {
     flex-direction: column;
     width: 100%;
   }
-
   .nav-list a {
     display: block;
     padding: 12px;
   }
 }
 
-/* Hero Section */
-.hero {
+/* Ad Horizontal */
+.ad-horizontal {
+  background: #bdc3c7;
+  color: #1E293B;
   text-align: center;
-  padding: 40px;
-  background: linear-gradient(90deg, #1E293B 30%, #3B82F6 100%);
-  color: white;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 1200px;
+  border: 1px solid #95a5a6;
 }
 
-.hero h1 {
-  font-size: 36px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Main Content Layout */
+/* Main Layout */
 .main-container {
   display: flex;
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
-/* Content Area */
+/* Content Area (70%) */
 .content {
   flex: 0 0 70%;
   background: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Sidebar */
+/* Sidebar (30%) */
 .sidebar {
   flex: 0 0 30%;
-  padding: 15px;
-  margin-left: 15px;
   background: white;
+  padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-/* Prevent Sidebar Overflow */
+/* Responsive for smaller screens */
 @media (max-width: 992px) {
   .main-container {
     flex-direction: column;
   }
-
   .content, .sidebar {
     flex: 0 0 100%;
     margin: 0;
   }
 }
 
-/* Social Media Icons */
+/* Social Media Section */
 .social-media {
   display: flex;
   justify-content: center;
@@ -155,7 +144,7 @@ header {
   transform: scale(1.1);
 }
 
-/* Recent Posts */
+/* Recent Posts Section */
 .recent-posts h3 {
   font-size: 18px;
   margin-bottom: 10px;
