@@ -103,4 +103,28 @@ Output the final result as a JSON array containing all 10 blog posts.
 
 
 
+//improve prompt
+ 
+Generate a highly detailed, curiosity-driven blog post that exceeds 2000 words, ensuring the content is meticulously researched, factually accurate, and engaging. The style must be conversational yet authoritative, and the tone should be fresh and varied—not following the exact same structural pattern (e.g., introduction, sections, conclusion) every time. Feel free to mix up the structure (for example, using narrative storytelling, Q&A formats, bullet points, or creative subheadings) to keep the presentation dynamic and unique.
+
+For each blog post, generate a JSON object with the following keys:
+
+- **id**: A lowercase, hyphenated string derived from the title.
+- **title**: Exactly as provided.
+- **image**: A placeholder URL in the format "assets/[id].jpg".
+- **summary**: A one-sentence hook that sparks curiosity.
+- **content**: A comprehensive, SEO-optimized HTML article of over 2000 words. The article must:
+  - Be rich and varied in structure (avoid a rigid pattern like “Introduction -> Section 1 -> ... -> Conclusion” every time).
+  - Include bold headings using `<strong>` tags and paragraph breaks with `<p>` tags.
+  - Avoid including placeholder texts such as references like `:refs[101-67,68,69,70,71,72,73,74,75,76].`
+  - Use different formats or narrative paths to ensure that the structure and style vary from one post to another.
+  - Be original and avoid repetitive or templated phrases.
+- **category**: One of the categories ("Food & Recipes," "Health & Fitness," or "Lifestyle") based on the topic's nature.
+
+Ensure that the content does not include any unwanted reference strings and does not follow an overly predictable or uniform structure. Each blog post should provide fresh insights, actionable tips, and a unique narrative journey that maintains the reader’s interest from start to finish.
+
+ 
+
+
+
 
