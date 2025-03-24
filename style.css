@@ -14,7 +14,7 @@ html, body {
 
 /* Header / Navbar */
 header {
-  background: #1E293B;
+  background: linear-gradient(90deg, #1E293B, #3B82F6);
   padding: 15px 20px;
   position: sticky;
   top: 0;
@@ -37,8 +37,10 @@ header {
   font-size: 24px;
   text-decoration: none;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* Navigation */
 .nav-list {
   list-style: none;
   display: flex;
@@ -51,12 +53,13 @@ header {
   text-decoration: none;
   padding: 10px 15px;
   font-size: 16px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .nav-list a:hover {
-  background: #3B82F6;
+  background: rgba(255,255,255,0.2);
   border-radius: 5px;
+  transform: scale(1.05);
 }
 
 /* Responsive Navigation */
@@ -105,6 +108,53 @@ header {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Post Card */
+.post-card {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  max-height: 300px;
+}
+
+.post-content {
+  padding: 15px 0;
+}
+
+.post-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Enhanced Read More Button */
+.read-more {
+  display: inline-block;
+  background: #3B82F6;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.read-more:hover {
+  background: #1E40AF;
+  transform: scale(1.05);
+}
+
 /* Sidebar (30%) */
 .sidebar {
   flex: 0 0 30%;
@@ -115,33 +165,22 @@ header {
   text-align: center;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 992px) {
-  .main-container {
-    flex-direction: column;
-  }
-  .content, .sidebar {
-    flex: 0 0 100%;
-    margin: 0;
-  }
-}
-
-/* Social Media Section */
+/* Social Media Section Using Emojis */
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-.social-media img {
-  width: 32px;
-  height: 32px;
+.social-media a {
+  font-size: 28px;
+  text-decoration: none;
   transition: transform 0.2s;
 }
 
-.social-media img:hover {
-  transform: scale(1.1);
+.social-media a:hover {
+  transform: scale(1.2);
 }
 
 /* Recent Posts Section */
@@ -152,6 +191,7 @@ header {
 
 .recent-posts ul {
   list-style: none;
+  padding: 0;
 }
 
 .recent-posts li {
@@ -164,6 +204,7 @@ header {
   width: 40px;
   height: 40px;
   margin-right: 10px;
+  object-fit: cover;
   border-radius: 5px;
 }
 
@@ -174,4 +215,15 @@ footer {
   background: #1E293B;
   color: white;
   margin-top: 20px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .content, .sidebar {
+    flex: 0 0 100%;
+    margin: 0;
+  }
 }
