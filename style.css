@@ -36,7 +36,8 @@ header {
 }
 
 /* Logo */
-.logo img {
+.logo a img {
+  display: block; /* Ensure the logo image always displays */
   height: 60px;  /* Adjust if needed */
   width: auto;
   object-fit: contain;
@@ -241,8 +242,8 @@ footer {
   .post-main-image,
   .post-content img {
     max-width: 100%;
-    max-height: 100px; /* Further constrain image height on mobile */
-    object-fit: contain;
+    max-height: 150px; /* Constrain image height on mobile */
+    object-fit: cover;
   }
 }
 
@@ -260,7 +261,7 @@ footer {
 /* Additional Mobile Improvements for Blog Posts */
 @media (max-width: 768px) {
   .post-card img {
-    max-height: 200px; /* Reduced image height on mobile */
+    max-height: 150px; /* Reduced image height on mobile */
   }
   .post-content h2 {
     font-size: 20px;
