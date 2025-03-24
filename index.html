@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Home</title>
-  <!-- Font Awesome for social media icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/your-fontawesome-key.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Constant Header -->
-  <header>
+  <header class="sticky-header">
     <div class="header-container">
       <div class="logo">
         <a href="index.html">dPal</a>
@@ -18,9 +17,9 @@
       <nav>
         <ul class="nav-list">
           <li><a href="index.html" onclick="filterPosts('all')">Home</a></li>
-          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
-          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
-          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
+          <li><a href="#" onclick="navigateToCategory('Food & Recipes')">Food & Recipes</a></li>
+          <li><a href="#" onclick="navigateToCategory('Health & Fitness')">Health & Fitness</a></li>
+          <li><a href="#" onclick="navigateToCategory('Lifestyle')">Lifestyle</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="newsletter.html">Newsletter</a></li>
@@ -31,39 +30,41 @@
 
   <!-- Top Horizontal Ad -->
   <div class="ad-horizontal top-ad">
-    <!-- Insert your Google AdSense code here -->
     Google Ad Placeholder (Top)
   </div>
 
   <!-- Main Container -->
   <div class="main-container">
-    <!-- Content Area (70% width on larger screens) -->
+    <!-- Content Area -->
     <main id="posts-container" class="content">
       <!-- Post cards will be dynamically loaded here -->
     </main>
-    <!-- Right Vertical Ad and Sidebar -->
-    <aside class="vertical-ad right-ad">
-      <!-- Existing Ad Section -->
+
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar">
       <div class="ad-section">
-        <!-- Insert your Google AdSense code here -->
         Google Ad Placeholder (Right)
       </div>
-      <!-- Social Media Section -->
+
       <div class="social-media">
-        <h3>Follow Us On Social Media</h3>
+        <h3>Follow Us</h3>
         <ul>
-          <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="https://twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
-          <!-- Add more platforms as needed -->
+          <li><a href="#" class="fa-brands fa-facebook"></a></li>
+          <li><a href="#" class="fa-brands fa-twitter"></a></li>
+          <li><a href="#" class="fa-brands fa-instagram"></a></li>
+          <li><a href="#" class="fa-brands fa-youtube"></a></li>
         </ul>
+      </div>
+
+      <div id="recent-posts">
+        <h3>Recent Posts</h3>
+        <ul></ul>
       </div>
     </aside>
   </div>
 
   <!-- Bottom Horizontal Ad -->
   <div class="ad-horizontal bottom-ad">
-    <!-- Insert your Google AdSense code here -->
     Google Ad Placeholder (Bottom)
   </div>
 
