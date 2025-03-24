@@ -6,7 +6,7 @@
   <title>dPal - Newsletter</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Additional styling for newsletter page */
+    /* Newsletter Page Styles */
     .newsletter-section {
       max-width: 600px;
       margin: 20px auto;
@@ -60,10 +60,15 @@
   </style>
 </head>
 <body>
+
   <!-- Constant Header -->
   <header>
     <div class="header-container">
-      <div class="logo"><a href="index.html">dPal</a></div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="dPal: Health Wealth Mind">
+        </a>
+      </div>
       <nav>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -78,14 +83,14 @@
     </div>
   </header>
 
-  <!-- Top Horizontal Ad -->
+  <!-- Top Ad -->
   <div class="ad-horizontal top-ad">
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Container -->
+  <!-- Main Layout -->
   <div class="main-container">
-    <!-- Newsletter Content (70% width on large screens) -->
+    <!-- Newsletter Content -->
     <main class="content">
       <div class="newsletter-section">
         <h2>Join the Health and Wealth Community</h2>
@@ -100,57 +105,26 @@
         <div id="subscription-status"></div>
       </div>
     </main>
-    <!-- Right Vertical Ad -->
-    <aside class="vertical-ad right-ad">
-      Google Ad Placeholder (Right)
+
+    <!-- Sidebar for Ads -->
+    <aside class="sidebar">
+      <div class="ad-vertical right-ad">
+        Google Ad Placeholder (Right)
+      </div>
     </aside>
   </div>
 
-  <!-- Bottom Horizontal Ad -->
+  <!-- Bottom Ad -->
   <div class="ad-horizontal bottom-ad">
     Google Ad Placeholder (Bottom)
   </div>
 
-  <!-- Firebase (Optional) - Uncomment and configure if using Firebase for subscriptions -->
-  <!--
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-  <script>
-    // Your Firebase configuration here
-    var firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
-    firebase.initializeApp(firebaseConfig);
-    var db = firebase.firestore();
-  </script>
-  -->
   <script>
     document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var email = this.email.value;
       document.getElementById('subscription-status').innerText = "Processing your subscription...";
 
-      // Uncomment the following if using Firebase
-      /*
-      db.collection("subscriptions").add({
-        email: email,
-        subscribedAt: new Date().toISOString()
-      })
-      .then(function() {
-        document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
-        document.getElementById('newsletter-form').reset();
-      })
-      .catch(function(error) {
-        console.error("Error adding subscription: ", error);
-        document.getElementById('subscription-status').innerText = "Subscription failed. Please try again.";
-      });
-      */
-      
       // Simulated subscription for static site
       setTimeout(function() {
         document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
@@ -158,5 +132,6 @@
       }, 1000);
     });
   </script>
+
 </body>
 </html>
