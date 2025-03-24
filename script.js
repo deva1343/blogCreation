@@ -49,7 +49,7 @@ function loadRecentPosts() {
 }
 
 function enableNavLinks() {
-  document.querySelectorAll(".nav-link").forEach(link => {
+  document.querySelectorAll(".nav-list a").forEach(link => {
     link.addEventListener("click", function(e) {
       const category = this.getAttribute("data-category");
       if (category) {
