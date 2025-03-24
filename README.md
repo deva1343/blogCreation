@@ -104,26 +104,30 @@ Output the final result as a JSON array containing all 10 blog posts.
 
 
 //improve prompt
- 
-Generate a highly detailed, curiosity-driven blog post that exceeds 2000 words, ensuring the content is meticulously researched, factually accurate, and engaging. The style must be conversational yet authoritative, and the tone should be fresh and varied—not following the exact same structural pattern (e.g., introduction, sections, conclusion) every time. Feel free to mix up the structure (for example, using narrative storytelling, Q&A formats, bullet points, or creative subheadings) to keep the presentation dynamic and unique.
 
-For each blog post, generate a JSON object with the following keys:
+ You are a professional content generator and researcher. Create a highly detailed, curiosity-driven blog post that exceeds 2000 words, ensuring the content is meticulously researched, factually accurate, and engaging. The style must be conversational yet authoritative, and the tone should be fresh and varied—not following the exact same structural pattern every time (for example, you might mix narrative storytelling with Q&A formats, bullet points, creative subheadings, or even sporadic interactive challenges to keep the presentation dynamic and unique). Avoid overly predictable or uniform structures and ensure that no invalid placeholder texts appear in the final content.
+
+For the blog post, generate a JSON object with the following keys:
 
 - **id**: A lowercase, hyphenated string derived from the title.
 - **title**: Exactly as provided.
-- **image**: A placeholder URL in the format "assets/[id].jpg".
-- **summary**: A one-sentence hook that sparks curiosity.
-- **content**: A comprehensive, SEO-optimized HTML article of over 2000 words. The article must:
-  - Be rich and varied in structure (avoid a rigid pattern like “Introduction -> Section 1 -> ... -> Conclusion” every time).
-  - Include bold headings using `<strong>` tags and paragraph breaks with `<p>` tags.
-  - Avoid including placeholder texts such as references like `:refs[101-67,68,69,70,71,72,73,74,75,76].`
-  - Use different formats or narrative paths to ensure that the structure and style vary from one post to another.
-  - Be original and avoid repetitive or templated phrases.
-- **category**: One of the categories ("Food & Recipes," "Health & Fitness," or "Lifestyle") based on the topic's nature.
+- **image**: A placeholder URL in the format `"assets/[id].jpg"`.
+- **summary**: A one-sentence hook that sparks curiosity (e.g., "Discover the untold truth about organic foods and how they might be changing your health forever.").
+- **content**: A comprehensive, SEO-optimized HTML article of over 2000 words that:
+  - Uses varied structures (for example, mix traditional introductions with storytelling, Q&A, bullet lists, or narrative journeys) rather than a fixed pattern like "Introduction → Section 1 → Section 2 → Conclusion".
+  - Includes bold headings using `<strong>` tags and paragraph breaks with `<p>` tags.
+  - Incorporates science-backed explanations (e.g., "A 2023 Harvard study revealed..."), myth-busting insights (e.g., "Organic doesn’t always mean pesticide-free—here’s why"), actionable tips (step-by-step guides, checklists, or suggested infographics), and real-life examples (e.g., "How Sarah lost 20lbs using meal prepping hacks").
+  - Integrates relevant SEO keywords naturally (e.g., "best organic foods for health," "organic vs. non-organic benefits").
+  - Suggests visual references like charts, comparison tables, or infographics when applicable.
+  - Wraps up with a motivational call-to-action and includes a FAQs section addressing 3-5 common reader questions.
+  - Is original, avoids repetitive or templated phrases, and does not include any placeholder reference strings.
+- **category**: Assign one of the following based on the topic’s nature: "Food & Recipes," "Health & Fitness," or "Lifestyle".
 
-Ensure that the content does not include any unwanted reference strings and does not follow an overly predictable or uniform structure. Each blog post should provide fresh insights, actionable tips, and a unique narrative journey that maintains the reader’s interest from start to finish.
+The topic for the blog post is:
 
- 
+**Organic vs. Non-Organic Foods: Understanding the Differences and Benefits**
+
+Ensure the article is rich in detail, provides fresh insights, actionable tips, and offers a unique narrative journey that keeps the reader’s interest from start to finish. Use primary sources (such as USDA reports and WHO guidelines) and cite recent studies (published within the last 5 years) along with expert quotes (from nutritionists or food scientists) to enhance credibility.
 
 
 
