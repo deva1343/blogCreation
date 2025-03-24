@@ -21,7 +21,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  min-height: 80px; /* Ensures a constant navbar height across pages */
+  min-height: 80px; /* Constant navbar height */
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -123,7 +123,7 @@ header {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  object-position: top; /* Focus on the top part of the image */
+  object-position: top; /* Focus on top of image */
   border-radius: 5px;
 }
 
@@ -247,7 +247,7 @@ footer {
 }
 
 /* Responsive Layout for Mobile Devices */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .main-container {
     flex-direction: column;
   }
