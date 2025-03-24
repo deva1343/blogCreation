@@ -14,8 +14,12 @@ body {
 }
 
 /* Header / Navbar */
+/* 
+   A new teal gradient that complements your logo’s 
+   mint/aqua tones. The text is white for contrast.
+*/
 header {
-  background: linear-gradient(90deg, #1E293B, #3B82F6);
+  background: linear-gradient(90deg, #41E296, #2CCF83);
   padding: 15px 20px;
   position: sticky;
   top: 0;
@@ -35,7 +39,8 @@ header {
 
 /* Logo */
 .logo img {
-  height: 50px; /* Adjust as needed */
+  /* The height can be adjusted as needed; 50-60px often works well. */
+  height: 60px; 
   width: auto;
   object-fit: contain;
   vertical-align: middle;
@@ -117,11 +122,16 @@ header {
   border-bottom: 1px solid #e5e7eb;
 }
 
+/* 
+   The max-height ensures images aren't too tall. 
+   object-position: top focuses on the top portion 
+   (important for images with people).
+*/
 .post-card img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  object-position: top; /* Ensures the top of the image is visible */
+  object-position: top; 
   border-radius: 5px;
 }
 
@@ -256,7 +266,7 @@ footer {
 /* Additional Mobile Improvements for Blog Posts */
 @media (max-width: 768px) {
   .post-card img {
-    max-height: 200px;  /* Reducing image height on mobile for better aesthetics */
+    max-height: 200px; /* Reduced height on mobile to avoid overwhelming the screen */
   }
   .post-content h2 {
     font-size: 20px;
