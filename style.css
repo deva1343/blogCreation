@@ -153,4 +153,10 @@ header {
     padding: 8px 16px;
     font-size: 14px;
   }
+  /* New rule: Limit image width on mobile devices */
+  .content img {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
 }
