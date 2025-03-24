@@ -6,24 +6,16 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Color Variables */
-:root {
-  --primary-color: #1E293B;
-  --secondary-color: #3B82F6;
-  --background-color: #F3F4F6;
-  --text-color: #111827;
-}
-
-/* Body */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+html, body {
+  overflow-x: hidden;  /* Prevents horizontal scrolling */
+  background-color: #F3F4F6;
+  color: #111827;
 }
 
 /* Header (Modern Navbar) */
 header {
-  background: var(--primary-color);
-  padding: 15px 0;
+  background: #1E293B;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -34,19 +26,18 @@ header {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* Left Logo */
+/* Logo */
 .logo a {
   color: white;
   font-size: 24px;
   text-decoration: none;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 /* Navigation */
@@ -54,6 +45,7 @@ header {
   list-style: none;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .nav-list a {
@@ -65,15 +57,33 @@ header {
 }
 
 .nav-list a:hover {
-  background: var(--secondary-color);
+  background: #3B82F6;
   border-radius: 5px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 12px;
+  }
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
   padding: 40px;
-  background: linear-gradient(90deg, var(--primary-color) 30%, var(--secondary-color) 100%);
+  background: linear-gradient(90deg, #1E293B 30%, #3B82F6 100%);
   color: white;
 }
 
@@ -86,14 +96,16 @@ header {
   margin-top: 10px;
 }
 
-/* Layout */
+/* Main Content Layout */
 .main-container {
   display: flex;
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
+/* Content Area */
 .content {
   flex: 0 0 70%;
   background: white;
@@ -113,13 +125,19 @@ header {
   text-align: center;
 }
 
-.ad-placeholder {
-  background: #ccc;
-  padding: 15px;
-  margin-bottom: 20px;
+/* Prevent Sidebar Overflow */
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .content, .sidebar {
+    flex: 0 0 100%;
+    margin: 0;
+  }
 }
 
-/* Social Media */
+/* Social Media Icons */
 .social-media {
   display: flex;
   justify-content: center;
@@ -164,7 +182,7 @@ header {
 footer {
   text-align: center;
   padding: 15px;
-  background: var(--primary-color);
+  background: #1E293B;
   color: white;
   margin-top: 20px;
 }
