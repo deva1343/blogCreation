@@ -6,7 +6,8 @@
   font-family: 'Inter', sans-serif;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   background-color: #F3F4F6;
   color: #111827;
@@ -14,13 +15,14 @@ html, body {
 
 /* Header / Navbar */
 header {
+  /* Gradient background for the navbar */
   background: linear-gradient(90deg, #1E293B, #3B82F6);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -32,12 +34,12 @@ header {
   flex-wrap: wrap;
 }
 
-.logo a {
-  color: white;
-  font-size: 24px;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
+/* Logo with Image */
+.logo img {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 /* Navigation */
@@ -57,7 +59,7 @@ header {
 }
 
 .nav-list a:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   transform: scale(1.05);
 }
@@ -92,6 +94,7 @@ header {
 /* Main Layout */
 .main-container {
   display: flex;
+  align-items: flex-start; /* Ensures sidebar is visible at the top */
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
@@ -115,14 +118,16 @@ header {
   border-bottom: 1px solid #e5e7eb;
 }
 
+/* Ensures the top part of the image is visible (prevents cutting off heads) */
 .post-card img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
   max-height: 300px;
+  object-fit: cover;
+  object-position: top; /* Focus on the top of the image */
+  border-radius: 5px;
 }
 
+/* Post Content */
 .post-content {
   padding: 15px 0;
 }
@@ -165,7 +170,7 @@ header {
   text-align: center;
 }
 
-/* Social Media Section Using Emojis */
+/* Social Media Section with Emojis */
 .social-media {
   display: flex;
   justify-content: center;
@@ -173,13 +178,13 @@ header {
   margin-bottom: 20px;
 }
 
-.social-media a {
+.social-media .emoji {
   font-size: 28px;
-  text-decoration: none;
+  display: inline-block;
   transition: transform 0.2s;
 }
 
-.social-media a:hover {
+.social-media .emoji:hover {
   transform: scale(1.2);
 }
 
@@ -222,7 +227,8 @@ footer {
   .main-container {
     flex-direction: column;
   }
-  .content, .sidebar {
+  .content,
+  .sidebar {
     flex: 0 0 100%;
     margin: 0;
   }
