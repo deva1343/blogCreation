@@ -14,10 +14,7 @@ body {
 }
 
 /* Header / Navbar */
-/* 
-   A new teal gradient that complements your logo’s 
-   mint/aqua tones. The text is white for contrast.
-*/
+/* A new teal gradient that complements your logo’s mint/aqua tones. */
 header {
   background: linear-gradient(90deg, #41E296, #2CCF83);
   padding: 15px 20px;
@@ -131,7 +128,7 @@ header {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  object-position: top; 
+  object-position: top;
   border-radius: 5px;
 }
 
