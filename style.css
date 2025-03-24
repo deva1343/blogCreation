@@ -6,106 +6,44 @@
   font-family: 'Inter', sans-serif;
 }
 
-html,
-body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
   background-color: #F3F4F6;
   color: #111827;
 }
 
-/* Header / Navbar */
-/* A new teal gradient that complements your logo’s mint/aqua tones. */
-header {
+/* Custom Navbar Styling */
+.custom-navbar {
   background: linear-gradient(90deg, #41E296, #2CCF83);
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-/* Logo */
-.logo img {
-  /* The height can be adjusted as needed; 50-60px often works well. */
-  height: 60px; 
-  width: auto;
+.navbar-brand .logo-img {
+  height: 60px;
   object-fit: contain;
-  vertical-align: middle;
 }
 
-/* Navigation */
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-size: 16px;
+/* Navbar Link Hover Effects */
+.navbar-nav .nav-link {
   transition: background 0.3s ease, transform 0.2s ease;
 }
-
-.nav-list a:hover {
+.navbar-nav .nav-link:hover {
   background: rgba(255,255,255,0.2);
   border-radius: 5px;
   transform: scale(1.05);
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .nav-list {
-    flex-direction: column;
-    width: 100%;
-  }
-  .nav-list a {
-    display: block;
-    padding: 12px;
-  }
 }
 
 /* Ad Horizontal */
 .ad-horizontal {
   background: #bdc3c7;
   color: #1E293B;
-  text-align: center;
   padding: 15px;
   margin: 15px auto;
   max-width: 1200px;
   border: 1px solid #95a5a6;
 }
 
-/* Main Layout */
-.main-container {
-  display: flex;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-/* Content Area (70%) */
+/* Content Area */
 .content {
-  flex: 0 0 70%;
   background: white;
   padding: 20px;
   border-radius: 5px;
@@ -118,12 +56,6 @@ header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e7eb;
 }
-
-/* 
-   The max-height ensures images aren't too tall. 
-   object-position: top focuses on the top portion 
-   (important for images with people).
-*/
 .post-card img {
   width: 100%;
   max-height: 300px;
@@ -131,17 +63,21 @@ header {
   object-position: top;
   border-radius: 5px;
 }
+/* On mobile, reduce image height */
+@media (max-width: 768px) {
+  .post-card img {
+    max-height: 200px;
+  }
+}
 
 /* Post Content */
 .post-content {
   padding: 15px 0;
 }
-
 .post-content h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-
 .post-content p {
   font-size: 16px;
   margin-bottom: 15px;
@@ -159,15 +95,13 @@ header {
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
 }
-
 .read-more:hover {
   background: #1E40AF;
   transform: scale(1.05);
 }
 
-/* Sidebar (30%) */
+/* Sidebar */
 .sidebar {
-  flex: 0 0 30%;
   background: white;
   padding: 15px;
   border-radius: 5px;
@@ -176,19 +110,10 @@ header {
 }
 
 /* Social Media Section with Emojis */
-.social-media {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
 .social-media .emoji {
   font-size: 28px;
-  display: inline-block;
   transition: transform 0.2s;
 }
-
 .social-media .emoji:hover {
   transform: scale(1.2);
 }
@@ -198,18 +123,15 @@ header {
   font-size: 18px;
   margin-bottom: 10px;
 }
-
 .recent-posts ul {
   list-style: none;
   padding: 0;
 }
-
 .recent-posts li {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-
 .recent-posts img {
   width: 40px;
   height: 40px;
@@ -220,14 +142,13 @@ header {
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 15px;
-  background: #1E293B;
+  background: #0D1B2A;
   color: white;
-  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
 }
 
-/* Single Post Image Styling (for post.html) */
+/* Single Post Page Image Styling */
 .post-page img,
 .post-main-image,
 .post-content img {
@@ -239,40 +160,11 @@ footer {
   border-radius: 5px;
   object-fit: contain;
 }
-
-/* Mobile Adjustment for Single Post Images */
+/* Mobile Adjustments for Single Post Images */
 @media (max-width: 600px) {
   .post-page img,
   .post-main-image,
   .post-content img {
     max-width: 100%;
-  }
-}
-
-/* Responsive Layout for Mobile Devices */
-@media (max-width: 992px) {
-  .main-container {
-    flex-direction: column;
-  }
-  .content, .sidebar {
-    flex: 0 0 100%;
-    margin: 0;
-  }
-}
-
-/* Additional Mobile Improvements for Blog Posts */
-@media (max-width: 768px) {
-  .post-card img {
-    max-height: 200px; /* Reduced height on mobile to avoid overwhelming the screen */
-  }
-  .post-content h2 {
-    font-size: 20px;
-  }
-  .post-content p {
-    font-size: 14px;
-  }
-  .read-more {
-    padding: 10px 20px;
-    font-size: 14px;
   }
 }
