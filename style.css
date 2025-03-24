@@ -252,3 +252,20 @@ footer {
     margin: 0;
   }
 }
+
+/* Additional Mobile Improvements for Blog Posts */
+@media (max-width: 768px) {
+  .post-card img {
+    max-height: 200px;  /* Reducing image height on mobile for better aesthetics */
+  }
+  .post-content h2 {
+    font-size: 20px;
+  }
+  .post-content p {
+    font-size: 14px;
+  }
+  .read-more {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
