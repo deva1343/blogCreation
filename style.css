@@ -122,7 +122,7 @@ header {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  object-position: top; /* Focus on the top (important for people images) */
+  object-position: top; /* Focus on top part of image */
   border-radius: 5px;
 }
 
@@ -240,6 +240,8 @@ footer {
   .post-main-image,
   .post-content img {
     max-width: 100%;
+    max-height: 150px; /* Constrain image height on mobile */
+    object-fit: contain;
   }
 }
 
