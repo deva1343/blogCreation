@@ -17,19 +17,21 @@
 
 
 
-promt for blog creation
+//promt for blog creation
+You are a content generator. Create 10 detailed, curiosity-driven blog posts, each over 2000 words, based on the topics provided below. For each topic, the blog post must explore the subject in depth with engaging, thought-provoking questions, fascinating facts, and practical insights. The style should be rich, vivid, and maintain the reader's curiosity from start to finish.
 
+For each blog post, generate a JSON object with the following keys:
+- "id": a unique identifier created by converting the title to a lowercase, hyphen-separated string.
+- "title": exactly as provided.
+- "image": an image URL placeholder in the format "assets/[id].jpg".
+- "summary": a one-sentence engaging overview of the blog post.
+- "content": a detailed HTML-formatted article of over 2000 words that includes:
+    - Bold headings using <strong> tags.
+    - Paragraph breaks using <p> tags.
+    - Additional spacing using <br> tags where needed.
+- "category": assign one of the three categories—Food & Recipes, Health & Fitness, or Lifestyle—based on the topic's nature.
 
-You are a content generator. Create 10 detailed, curiosity-driven blog posts, each of over 2000 words, based on the list of topics provided below. Each blog post should explore its subject in depth, engaging the reader with thought-provoking questions, fascinating facts, and practical insights.
-
-For each topic, generate a blog post that is output as a JSON object. Each JSON object must contain the following keys: "id", "title", "image", "summary", "content", and "category". The "content" field must be HTML-formatted text and include:
-- Bold headings using <strong> tags
-- Paragraph breaks using <p> tags
-- Additional spacing where needed using <br> tags
-
-Remove any unnecessary special characters. Ensure the content is engaging, curiosity-driven, and meets the length requirement of 2000+ words.
-
-The final output should be a JSON array with all 10 blog posts.
+Ensure that the content is rich, curiosity-driven, and free from unnecessary special characters. Each blog post should be thorough and informative, with multiple sections and subheadings to break down the subject matter, and it must meet the length requirement.
 
 Here are the topics:
 1. Organic vs. Non-Organic Foods: Understanding the Differences and Benefits
@@ -43,13 +45,6 @@ Here are the topics:
 9. Mindfulness in Minutes: A Daily Guide!
 10. Boost Immunity with These Simple Moves!
 
-For each blog post, generate:
-- A unique "id" (a lowercase, hyphen-separated string based on the title)
-- A "title" (exactly as provided)
-- An "image" URL (you can use a placeholder like "assets/[id].jpg")
-- A "summary" (a one-sentence engaging overview of the blog post)
-- "content" (the full HTML-formatted article with 2000+ words, with bold headings, paragraphs, and extra line spacing)
-- A "category" (choose a category like "Health & Fitness", "Wellness", or "Lifestyle" as appropriate for the topic)
+Output the final result as a JSON array containing all 10 blog posts.
 
-Output the final JSON array containing the 10 blog posts.
 
