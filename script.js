@@ -50,7 +50,7 @@ function loadRecentPosts() {
 }
 
 function enableNavLinks() {
-  // Use event delegation: listen on document.body for clicks on any .nav-list a with data-category attribute
+  // Use event delegation to handle clicks on nav links with a data-category attribute
   document.body.addEventListener("click", function(e) {
     let target = e.target;
     while (target && target !== document.body) {
