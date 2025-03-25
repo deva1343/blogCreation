@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Blog Post</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   <style>
     /* Additional styling for the post detail page */
@@ -39,7 +36,7 @@
     .back-button:hover {
       background: #1c6391;
     }
-    /* Mobile adjustments for post detail */
+    /* Mobile Adjustments for Post Detail */
     @media (max-width: 600px) {
       .post-detail h1 {
         font-size: 20px;
@@ -55,61 +52,33 @@
   </style>
 </head>
 <body>
-  <!-- Dynamic Header Placeholder -->
+  <!-- Dynamic Header Placeholder (loaded from header.html) -->
   <div id="header-placeholder"></div>
 
   <!-- Top Horizontal Ad -->
-  <div class="ad-horizontal top-ad text-center">
+  <div class="ad-horizontal top-ad">
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Layout -->
-  <div class="container main-container mt-5 pt-5">
-    <div class="row">
-      <!-- Post Content Area (70%) -->
-      <div class="col-lg-8 content">
-        <div class="post-detail" id="post-detail">
-          <!-- Post content will be injected here by JS -->
-        </div>
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Post Content Area (70%) -->
+    <main id="post-detail" class="content">
+      <div class="post-detail">
+        <!-- Post content will be injected dynamically -->
       </div>
-      <!-- Sidebar (30%) -->
-      <div class="col-lg-4 sidebar">
-        <div class="ad-placeholder mb-4 text-center">
-          Google Ad Placeholder (Right)
-        </div>
-        <div class="recent-posts">
-          <h3>Recent Posts</h3>
-          <ul id="recent-posts-list" class="list-unstyled"></ul>
-        </div>
-      </div>
-    </div>
+    </main>
+    <!-- Right Sidebar (30%) -->
+    <aside class="vertical-ad right-ad">
+      Google Ad Placeholder (Right)
+    </aside>
   </div>
 
   <!-- Bottom Horizontal Ad -->
-  <div class="ad-horizontal bottom-ad text-center">
+  <div class="ad-horizontal bottom-ad">
     Google Ad Placeholder (Bottom)
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-dark text-white mt-4">
-    <p>© 2025 dPal. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="script.js"></script>
-  
-  <!-- Dynamic Header Loader -->
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-      })
-      .catch(error => console.error('Error loading header:', error));
-  </script>
-  
   <script>
     // Utility function to get query parameter by name
     function getQueryParam(param) {
@@ -123,7 +92,7 @@
         .then(response => response.json())
         .then(posts => {
           const post = posts.find(p => p.id === postId);
-          const container = document.getElementById("post-detail");
+          const container = document.querySelector(".post-detail");
           if (post) {
             let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
             container.innerHTML = `
@@ -138,7 +107,7 @@
         })
         .catch(error => {
           console.error("Error loading post:", error);
-          document.getElementById("post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
+          document.querySelector(".post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
         });
     }
 
@@ -146,14 +115,18 @@
     if (postId) {
       loadPost(postId);
     } else {
-      document.getElementById("post-detail").innerHTML = "<p>No post specified.</p>";
+      document.querySelector(".post-detail").innerHTML = "<p>No post specified.</p>";
     }
   </script>
-  
-  <!-- Load Recent Posts (if not already loaded via script.js) -->
+
+  <!-- Dynamic Header Loader -->
   <script>
-    // This call can be integrated in your script.js; if it's already there, you may remove this duplicate
-    loadRecentPosts();
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading header:', error));
   </script>
 </body>
 </html>
