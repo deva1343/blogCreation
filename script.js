@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   loadPosts();
   loadRecentPosts();
+  // Enable navigation via event delegation
   enableNavLinks();
 });
 
@@ -49,13 +50,17 @@ function loadRecentPosts() {
 }
 
 function enableNavLinks() {
-  document.querySelectorAll(".nav-list a").forEach(link => {
-    link.addEventListener("click", function(e) {
-      const category = this.getAttribute("data-category");
-      if (category) {
+  // Use event delegation: listen on document.body for clicks on any .nav-list a with data-category attribute
+  document.body.addEventListener("click", function(e) {
+    let target = e.target;
+    while (target && target !== document.body) {
+      if (target.matches(".nav-list a[data-category]")) {
         e.preventDefault();
+        const category = target.getAttribute("data-category");
         loadPosts(category);
+        return;
       }
-    });
+      target = target.parentNode;
+    }
   });
 }
