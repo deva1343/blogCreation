@@ -61,7 +61,7 @@
   </style>
 </head>
 <body>
-  <!-- Header Placeholder (Dynamic Load) -->
+  <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
   <!-- Top Horizontal Ad -->
@@ -107,7 +107,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="script.js"></script>
-  
   <!-- Dynamic Header Loader -->
   <script>
     fetch('header.html')
@@ -117,7 +116,6 @@
       })
       .catch(error => console.error('Error loading header:', error));
   </script>
-
   <!-- Contact Form Submission Script -->
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
