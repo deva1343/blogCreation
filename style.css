@@ -1,127 +1,146 @@
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
+/* Global Reset */
+* {
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
-  color: #333;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #F3F4F6;
+  color: #111827;
 }
 
 /* Navbar */
-.navbar {
-  background-color: #2980b9;
-  padding: 10px 0;
+.custom-navbar {
+  background: linear-gradient(90deg, #41E296, #2CCF83);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-height: 80px;
 }
-.navbar .nav-link {
-  color: white !important;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-.navbar .nav-link:hover {
-  color: #dcdcdc !important;
-  text-decoration: underline;
+.navbar-brand .logo-img {
+  height: 60px;
+  object-fit: contain;
 }
 
-/* Main Container */
-.main-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+/* Override Bootstrap navbar toggler icon for better visibility if needed */
+.navbar-toggler {
+  border: none;
 }
-.row {
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Navigation Links */
+.nav-list {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  gap: 15px;
 }
+.nav-list a {
+  color: white !important;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.nav-list a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+/* Ad Horizontal */
+.ad-horizontal {
+  background: #bdc3c7;
+  color: #1E293B;
+  text-align: center;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 1200px;
+  border: 1px solid #95a5a6;
+}
+
+/* Main Layout */
+/* Using Bootstrap grid, so we don’t need extra flex definitions here */
 .content {
-  width: 70%;
-  padding-right: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+/* Post Card */
+.post-card {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: top; /* Focus on the top */
+  border-radius: 5px;
+}
+
+/* Post Content */
+.post-content {
+  padding: 15px 0;
+}
+.post-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.post-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Read More Button */
+.read-more {
+  display: inline-block;
+  background: #3B82F6;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.read-more:hover {
+  background: #1E40AF;
+  transform: scale(1.05);
+}
+
+/* Sidebar */
 .sidebar {
-  width: 30%;
-  background: #fff;
+  background: white;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-/* Post Detail Styling */
-.post-detail {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-.post-detail h1 {
-  color: #2980b9;
-  font-size: 28px;
-}
-.post-detail .post-content {
-  font-size: 16px;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-/* Post Image Handling */
-.post-image-container {
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  border-radius: 5px;
+/* Social Media Section with Emojis */
+.social-media {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
-.post-image-container img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 5px;
-}
-
-/* Ads Styling */
-.ad-horizontal {
-  background: #ddd;
-  padding: 10px;
-  margin: 10px 0;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-  border-radius: 5px;
-}
-.ad-placeholder {
-  background: #f0f0f0;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-}
-
-/* Sidebar Styling */
-.sidebar .social-follow {
-  text-align: center;
-  padding: 10px 0;
-}
-.social-follow a {
-  font-size: 24px;
-  margin: 0 10px;
-  text-decoration: none;
-  color: #2980b9;
-}
-.social-follow a:hover {
-  color: #1c6391;
-}
-.social-follow .emoji {
+.social-media .emoji {
   font-size: 28px;
+  transition: transform 0.2s;
+}
+.social-media .emoji:hover {
+  transform: scale(1.2);
 }
 
-/* Recent Posts Styling */
-.recent-posts {
-  margin-top: 20px;
-}
+/* Recent Posts */
 .recent-posts h3 {
   font-size: 18px;
-  color: #333;
   margin-bottom: 10px;
 }
 .recent-posts ul {
@@ -131,68 +150,63 @@ body {
 .recent-posts li {
   display: flex;
   align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
 }
-.recent-posts li img {
-  width: 50px;
-  height: 50px;
+.recent-posts img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
   object-fit: cover;
   border-radius: 5px;
-  margin-right: 10px;
-}
-.recent-posts li a {
-  text-decoration: none;
-  color: #2980b9;
-  font-size: 14px;
-}
-.recent-posts li a:hover {
-  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  background: #333;
+  background: #1E293B;
   color: white;
+  padding: 15px;
   text-align: center;
-  padding: 15px 0;
   margin-top: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .content {
+/* Single Post Image Styling (for post.html) */
+.post-page img,
+.post-main-image,
+.post-content img {
+  display: block;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* Mobile Adjustments for Single Post Images */
+@media (max-width: 600px) {
+  .post-page img,
+  .post-main-image,
+  .post-content img {
     width: 100%;
-    padding-right: 0;
-  }
-  .sidebar {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .post-image-container img {
-    width: 100%;
-    height: auto;
+    height: auto;  /* Allow natural scaling */
+    object-fit: contain;
+    border: 2px solid #ddd; /* Frame the image */
   }
 }
 
+/* Additional Mobile Improvements for Blog Posts */
 @media (max-width: 768px) {
-  .main-container {
-    padding: 10px;
+  .post-card img {
+    max-height: 150px; /* Reduced image height on mobile */
   }
-  .navbar .nav-link {
-    padding: 8px 10px;
+  .post-content h2 {
+    font-size: 20px;
   }
-  .post-detail h1 {
-    font-size: 24px;
-  }
-  .post-detail .post-content {
+  .post-content p {
     font-size: 14px;
   }
-  .recent-posts li {
-    font-size: 12px;
-  }
-  .recent-posts li img {
-    width: 40px;
-    height: 40px;
+  .read-more {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
