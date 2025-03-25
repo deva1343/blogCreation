@@ -1,212 +1,181 @@
-/* Global Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
-html, body {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  background-color: #F3F4F6;
-  color: #111827;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-/* Navbar */
-.custom-navbar {
-  background: linear-gradient(90deg, #41E296, #2CCF83);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  min-height: 80px;
-}
-.navbar-brand .logo-img {
-  height: 60px;
-  object-fit: contain;
+/* Navbar Styles (Ensuring Consistency) */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2980b9;
+  padding: 15px 20px;
 }
 
-/* Override Bootstrap navbar toggler icon for better visibility if needed */
-.navbar-toggler {
-  border: none;
-}
-.navbar-toggler-icon {
-  filter: invert(1);
+.logo a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Navigation Links */
 .nav-list {
   list-style: none;
   display: flex;
   gap: 15px;
 }
+
+.nav-list li {
+  display: inline;
+}
+
 .nav-list a {
-  color: white !important;
+  color: white;
   text-decoration: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  padding: 8px 12px;
+  transition: 0.3s;
 }
+
 .nav-list a:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  transform: scale(1.05);
 }
 
-/* Ad Horizontal */
-.ad-horizontal {
-  background: #bdc3c7;
-  color: #1E293B;
-  text-align: center;
-  padding: 15px;
-  margin: 15px auto;
+/* Main Content Layout (70-30 Rule) */
+.main-container {
+  display: flex;
+  gap: 20px;
   max-width: 1200px;
-  border: 1px solid #95a5a6;
+  margin: auto;
+  padding: 20px;
 }
 
-/* Main Layout */
-/* Using Bootstrap grid, so we don’t need extra flex definitions here */
 .content {
+  flex: 7;
   background: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Post Card */
-.post-card {
-  margin-bottom: 25px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
-.post-card img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  object-position: top; /* Focus on the top */
-  border-radius: 5px;
-}
-
-/* Post Content */
-.post-content {
-  padding: 15px 0;
-}
-.post-content h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-.post-content p {
-  font-size: 16px;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-/* Read More Button */
-.read-more {
-  display: inline-block;
-  background: #3B82F6;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.read-more:hover {
-  background: #1E40AF;
-  transform: scale(1.05);
-}
-
-/* Sidebar */
+/* Sidebar (30%) */
 .sidebar {
+  flex: 3;
   background: white;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-/* Social Media Section with Emojis */
+/* Google Ads & Right Section Styling */
+.ad-placeholder {
+  background: #e0e0e0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Social Follow Section */
+.social-follow {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.social-follow h3 {
+  margin-bottom: 10px;
+}
+
 .social-media {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-.social-media .emoji {
-  font-size: 28px;
-  transition: transform 0.2s;
-}
-.social-media .emoji:hover {
-  transform: scale(1.2);
+  gap: 10px;
 }
 
-/* Recent Posts */
+.emoji {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Recent Posts Section */
+.recent-posts {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
 .recent-posts h3 {
-  font-size: 18px;
   margin-bottom: 10px;
 }
+
 .recent-posts ul {
   list-style: none;
   padding: 0;
 }
+
 .recent-posts li {
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
+
 .recent-posts img {
   width: 40px;
   height: 40px;
-  margin-right: 10px;
-  object-fit: cover;
   border-radius: 5px;
+  margin-right: 10px;
 }
 
-/* Footer */
-footer {
-  background: #1E293B;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Single Post Image Styling (for post.html) */
-.post-page img,
-.post-main-image,
-.post-content img {
-  display: block;
+/* Post Image Fix (Ensures Mobile Scaling Works Properly) */
+.post-image-container {
+  width: 100%;
   max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.post-image-container img {
   width: 100%;
   height: auto;
-  margin: 0 auto 20px;
-  border-radius: 5px;
   object-fit: contain;
+  border-radius: 5px;
 }
 
-/* Mobile Adjustments for Single Post Images */
-@media (max-width: 600px) {
-  .post-page img,
-  .post-main-image,
-  .post-content img {
-    width: 100%;
-    height: auto;  /* Allow natural scaling */
-    object-fit: contain;
-    border: 2px solid #ddd; /* Frame the image */
-  }
+/* Ad Placements */
+.ad-horizontal {
+  text-align: center;
+  padding: 15px;
+  background: #ddd;
+  margin: 20px auto;
+  border-radius: 5px;
 }
 
-/* Additional Mobile Improvements for Blog Posts */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .post-card img {
-    max-height: 150px; /* Reduced image height on mobile */
+  .main-container {
+    flex-direction: column;
   }
-  .post-content h2 {
-    font-size: 20px;
+  .sidebar {
+    order: 2;
   }
-  .post-content p {
-    font-size: 14px;
+  .content {
+    order: 1;
   }
-  .read-more {
-    padding: 10px 20px;
-    font-size: 14px;
+  .post-image-container img {
+    width: 100%;
+    height: auto;
+  }
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
