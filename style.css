@@ -1,148 +1,76 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
 }
 
-/* Navbar Styles (Ensuring Consistency) */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #2980b9;
-  padding: 15px 20px;
+/* Navbar */
+.navbar {
+  background-color: #2980b9;
+  padding: 10px 0;
 }
-
-.logo a {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
+.navbar .nav-link {
+  color: white !important;
   font-weight: bold;
+  padding: 10px 15px;
+}
+.navbar .nav-link:hover {
+  color: #dcdcdc !important;
+  text-decoration: underline;
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.nav-list li {
-  display: inline;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
-
-.nav-list a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-}
-
-/* Main Content Layout (70-30 Rule) */
+/* Main Container */
 .main-container {
-  display: flex;
-  gap: 20px;
   max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 .content {
-  flex: 7;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
+  width: 70%;
+  padding-right: 20px;
 }
-
-/* Sidebar (30%) */
 .sidebar {
-  flex: 3;
-  background: white;
+  width: 30%;
+  background: #fff;
   padding: 15px;
   border-radius: 5px;
-  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Google Ads & Right Section Styling */
-.ad-placeholder {
-  background: #e0e0e0;
+/* Post Detail Styling */
+.post-detail {
+  background: #fff;
   padding: 20px;
-  margin-bottom: 20px;
   border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.post-detail h1 {
+  color: #2980b9;
+  font-size: 28px;
+}
+.post-detail .post-content {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
 }
 
-/* Social Follow Section */
-.social-follow {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.social-follow h3 {
-  margin-bottom: 10px;
-}
-
-.social-media {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.emoji {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Recent Posts Section */
-.recent-posts {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.recent-posts h3 {
-  margin-bottom: 10px;
-}
-
-.recent-posts ul {
-  list-style: none;
-  padding: 0;
-}
-
-.recent-posts li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.recent-posts img {
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-/* Post Image Fix (Ensures Mobile Scaling Works Properly) */
+/* Post Image Handling */
 .post-image-container {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto 20px;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .post-image-container img {
   width: 100%;
   height: auto;
@@ -150,32 +78,121 @@ body {
   border-radius: 5px;
 }
 
-/* Ad Placements */
+/* Ads Styling */
 .ad-horizontal {
-  text-align: center;
-  padding: 15px;
   background: #ddd;
-  margin: 20px auto;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
   border-radius: 5px;
 }
+.ad-placeholder {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
+/* Sidebar Styling */
+.sidebar .social-follow {
+  text-align: center;
+  padding: 10px 0;
+}
+.social-follow a {
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: #2980b9;
+}
+.social-follow a:hover {
+  color: #1c6391;
+}
+.social-follow .emoji {
+  font-size: 28px;
+}
+
+/* Recent Posts Styling */
+.recent-posts {
+  margin-top: 20px;
+}
+.recent-posts h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.recent-posts ul {
+  list-style: none;
+  padding: 0;
+}
+.recent-posts li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+.recent-posts li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.recent-posts li a {
+  text-decoration: none;
+  color: #2980b9;
+  font-size: 14px;
+}
+.recent-posts li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .content {
+    width: 100%;
+    padding-right: 0;
   }
   .sidebar {
-    order: 2;
-  }
-  .content {
-    order: 1;
+    width: 100%;
+    margin-top: 20px;
   }
   .post-image-container img {
     width: 100%;
     height: auto;
   }
-  .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+  .navbar .nav-link {
+    padding: 8px 10px;
+  }
+  .post-detail h1 {
+    font-size: 24px;
+  }
+  .post-detail .post-content {
+    font-size: 14px;
+  }
+  .recent-posts li {
+    font-size: 12px;
+  }
+  .recent-posts li img {
+    width: 40px;
+    height: 40px;
   }
 }
