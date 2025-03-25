@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Newsletter</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Newsletter Page Styles */
+    /* Newsletter Page Specific Styles */
     .newsletter-section {
       max-width: 600px;
       margin: 20px auto;
@@ -61,17 +64,17 @@
 </head>
 <body>
 
-  <!-- Constant Header -->
+  <!-- Constant Navbar -->
   <header>
-    <div class="header-container">
+    <div class="header-container container">
       <div class="logo">
         <a href="index.html">
           <img src="logo.png" alt="dPal: Health Wealth Mind">
         </a>
       </div>
       <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
+        <ul class="nav-list d-flex flex-wrap">
+          <li><a href="index.html" data-category="all">Home</a></li>
           <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
           <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
           <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
@@ -83,55 +86,61 @@
     </div>
   </header>
 
-  <!-- Top Ad -->
-  <div class="ad-horizontal top-ad">
+  <!-- Top Horizontal Ad -->
+  <div class="ad-horizontal top-ad text-center">
     Google Ad Placeholder (Top)
   </div>
 
   <!-- Main Layout -->
-  <div class="main-container">
-    <!-- Newsletter Content -->
-    <main class="content">
-      <div class="newsletter-section">
-        <h2>Join the Health and Wealth Community</h2>
-        <p>
-          Get daily health tips, natural wellness advice, and holistic living inspiration delivered straight to your inbox!
-          From nutrition and mindfulness to self-care and sustainable living, we’re here to help you live your healthiest, happiest life—naturally.
-        </p>
-        <form id="newsletter-form">
-          <input type="email" name="email" placeholder="Enter your email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-        <div id="subscription-status"></div>
+  <div class="container main-container mt-5 pt-5">
+    <div class="row">
+      <!-- Newsletter Content (70%) -->
+      <div class="col-lg-8 content">
+        <div class="newsletter-section">
+          <h2>Join the Health and Wealth Community</h2>
+          <p>
+            Get daily health tips, natural wellness advice, and holistic living inspiration delivered straight to your inbox!
+            From nutrition and mindfulness to self-care and sustainable living, we’re here to help you live your healthiest, happiest life—naturally.
+          </p>
+          <form id="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <div id="subscription-status"></div>
+        </div>
       </div>
-    </main>
-
-    <!-- Sidebar for Ads -->
-    <aside class="sidebar">
-      <div class="ad-vertical right-ad">
-        Google Ad Placeholder (Right)
+      <!-- Sidebar for Ads (30%) -->
+      <div class="col-lg-4 sidebar">
+        <div class="ad-vertical right-ad text-center">
+          Google Ad Placeholder (Right)
+        </div>
       </div>
-    </aside>
+    </div>
   </div>
 
-  <!-- Bottom Ad -->
-  <div class="ad-horizontal bottom-ad">
+  <!-- Bottom Horizontal Ad -->
+  <div class="ad-horizontal bottom-ad text-center">
     Google Ad Placeholder (Bottom)
   </div>
 
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white mt-4">
+    <p>© 2025 dPal. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS for Newsletter (if any) -->
   <script>
     document.getElementById('newsletter-form').addEventListener('submit', function(e) {
       e.preventDefault();
       var email = this.email.value;
       document.getElementById('subscription-status').innerText = "Processing your subscription...";
-
-      // Simulated subscription for static site
       setTimeout(function() {
         document.getElementById('subscription-status').innerText = "Thank you for subscribing!";
         document.getElementById('newsletter-form').reset();
       }, 1000);
     });
   </script>
-
 </body>
 </html>
