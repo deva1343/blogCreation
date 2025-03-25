@@ -62,7 +62,7 @@ html, body {
 }
 
 /* Main Layout */
-/* Using Bootstrap grid now, so we don’t need to define flex for container */
+/* Using Bootstrap grid, so we don’t need to define extra flex styles here */
 .content {
   background: white;
   padding: 20px;
@@ -187,9 +187,9 @@ footer {
   .post-page img,
   .post-main-image,
   .post-content img {
-    max-width: 100%;
-    max-height: 150px; /* Constrain image height on mobile */
-    object-fit: cover;
+    width: 100%;
+    height: auto;  /* Allow natural scaling without fixed max-height */
+    object-fit: contain;
   }
 }
 
