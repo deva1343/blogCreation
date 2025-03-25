@@ -190,7 +190,7 @@ footer {
     width: 100%;
     height: auto;  /* Allow natural scaling */
     object-fit: contain;
-    border: 2px solid #ddd;  /* Add a subtle frame */
+    border: 2px solid #ddd;  /* Frame the image */
     border-radius: 5px;
   }
 }
