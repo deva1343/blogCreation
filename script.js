@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  loadPosts();
+  if (document.getElementById("posts-container")) {
+    loadPosts();
+  }
   loadRecentPosts();
   enableNavLinks();
 });
@@ -21,7 +23,9 @@ function displayPosts(posts, category) {
       const card = document.createElement("div");
       card.className = "post-card";
       card.innerHTML = `
-        <img src="${post.image}" alt="${post.title}">
+        <div class="post-image-container">
+          <img src="${post.image}" alt="${post.title}">
+        </div>
         <div class="post-content">
           <h2>${post.title}</h2>
           <p>${post.summary}</p>
@@ -49,15 +53,16 @@ function loadRecentPosts() {
 }
 
 function enableNavLinks() {
-  // Use event delegation: add a click listener to document.body.
+  // Use event delegation on the body to handle clicks on nav links with a data-category attribute.
   document.body.addEventListener("click", function(e) {
     let target = e.target;
+    // Traverse up in case a child element (like an icon) was clicked.
     while (target && target !== document.body) {
       if (target.matches(".nav-list a[data-category]")) {
-        const category = target.getAttribute("data-category");
-        // Check if current page is index.html (or root) so we can intercept and load posts dynamically.
-        if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+        // Only intercept if the posts container exists (i.e. on the homepage)
+        if (document.getElementById("posts-container")) {
           e.preventDefault();
+          const category = target.getAttribute("data-category");
           loadPosts(category);
         }
         return;
