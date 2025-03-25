@@ -42,28 +42,29 @@
     .back-button:hover {
       background: #1c6391;
     }
+    
+    /* Mobile Adjustments for Post Detail */
+    @media (max-width: 600px) {
+      .post-detail img {
+        max-height: 150px;  /* Constrain image height on mobile */
+        object-fit: contain;
+      }
+      .post-detail h1 {
+        font-size: 20px;
+      }
+      .post-detail .post-content {
+        font-size: 14px;
+      }
+      .back-button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Constant Header -->
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">dPal</a>
-      </div>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
-          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
-          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Dynamic Header Placeholder -->
+  <div id="header-placeholder"></div>
 
   <!-- Top Horizontal Ad -->
   <div class="ad-horizontal top-ad">
@@ -74,7 +75,9 @@
   <div class="main-container">
     <!-- Post Content Area (70% width on larger screens) -->
     <main id="post-detail" class="content">
-      <!-- Post content will be loaded dynamically -->
+      <div class="post-detail">
+        <!-- Post content will be injected here by JavaScript -->
+      </div>
     </main>
     <!-- Right Vertical Ad (30% width on larger screens) -->
     <aside class="vertical-ad right-ad">
@@ -100,7 +103,7 @@
         .then(response => response.json())
         .then(posts => {
           const post = posts.find(p => p.id === postId);
-          const container = document.getElementById("post-detail");
+          const container = document.querySelector(".post-detail");
           if (post) {
             let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
             container.innerHTML = `
@@ -115,7 +118,7 @@
         })
         .catch(error => {
           console.error("Error loading post:", error);
-          document.getElementById("post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
+          document.querySelector(".post-detail").innerHTML = "<p>Error loading post. Please try again later.</p>";
         });
     }
 
@@ -123,8 +126,18 @@
     if (postId) {
       loadPost(postId);
     } else {
-      document.getElementById("post-detail").innerHTML = "<p>No post specified.</p>";
+      document.querySelector(".post-detail").innerHTML = "<p>No post specified.</p>";
     }
+  </script>
+
+  <!-- Dynamic Header Loader -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading header:', error));
   </script>
 </body>
 </html>
