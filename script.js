@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   loadPosts();
   loadRecentPosts();
-  // Enable navigation via event delegation
   enableNavLinks();
 });
 
@@ -50,14 +49,17 @@ function loadRecentPosts() {
 }
 
 function enableNavLinks() {
-  // Use event delegation to handle clicks on nav links with a data-category attribute
+  // Use event delegation: add a click listener to document.body.
   document.body.addEventListener("click", function(e) {
     let target = e.target;
     while (target && target !== document.body) {
       if (target.matches(".nav-list a[data-category]")) {
-        e.preventDefault();
         const category = target.getAttribute("data-category");
-        loadPosts(category);
+        // Check if current page is index.html (or root) so we can intercept and load posts dynamically.
+        if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+          e.preventDefault();
+          loadPosts(category);
+        }
         return;
       }
       target = target.parentNode;
