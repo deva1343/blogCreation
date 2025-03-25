@@ -4,125 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Blog Post</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Additional styling for the post detail page */
-    .post-detail {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .post-detail h1 {
-      color: #2980b9;
-      margin-bottom: 20px;
-    }
-    .post-detail .post-content {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .back-button {
-      display: inline-block;
-      background: #2980b9;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .back-button:hover {
-      background: #1c6391;
-    }
-    /* Mobile adjustments specific to post detail */
-    @media (max-width: 600px) {
-      .post-detail h1 {
-        font-size: 20px;
-      }
-      .post-detail .post-content {
-        font-size: 14px;
-      }
-      .back-button {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Dynamic Header Placeholder -->
-  <div id="header-placeholder"></div>
 
-  <!-- Top Horizontal Ad -->
-  <div class="ad-horizontal top-ad text-center">
+  <!-- Navbar (Same as Homepage) -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">dPal</a>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="category.html?category=Food & Recipes">Food & Recipes</a></li>
+          <li><a href="category.html?category=Health & Fitness">Health & Fitness</a></li>
+          <li><a href="category.html?category=Lifestyle">Lifestyle</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Section -->
+  <div class="ad-horizontal top-ad">
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Layout -->
-  <div class="container main-container mt-5 pt-5">
-    <div class="row">
-      <!-- Post Content Area (70%) -->
-      <div class="col-lg-8 content">
-        <div class="post-detail" id="post-detail">
-          <!-- Post content will be injected dynamically via JS -->
+  <!-- Main Container (70-30 Layout) -->
+  <div class="main-container">
+    <!-- Blog Post Content (70%) -->
+    <main id="post-detail" class="content">
+      <!-- Post content will be loaded dynamically -->
+    </main>
+
+    <!-- Sidebar (30%) -->
+    <aside class="sidebar">
+      <div class="ad-placeholder">
+        Google Ad Placeholder (Right)
+      </div>
+      <div class="social-follow">
+        <h3>Follow Us</h3>
+        <div class="social-media">
+          <span class="emoji">👍</span>
+          <span class="emoji">❤️</span>
+          <span class="emoji">🔔</span>
         </div>
       </div>
-      <!-- Sidebar (30%) -->
-      <div class="col-lg-4 sidebar">
-        <div class="ad-placeholder mb-4 text-center">
-          Google Ad Placeholder (Right)
-        </div>
-        <div class="social-media mb-4 text-center">
-          <a href="#" class="me-2"><span class="emoji">📘</span></a>
-          <a href="#" class="me-2"><span class="emoji">🐦</span></a>
-          <a href="#"><span class="emoji">📸</span></a>
-        </div>
-        <div class="recent-posts">
-          <h3>Recent Posts</h3>
-          <ul id="recent-posts-list" class="list-unstyled"></ul>
-        </div>
+      <div class="recent-posts">
+        <h3>Recent Posts</h3>
+        <ul id="recent-posts-list"></ul>
       </div>
-    </div>
+    </aside>
   </div>
 
-  <!-- Bottom Horizontal Ad -->
-  <div class="ad-horizontal bottom-ad text-center">
+  <!-- Bottom Ad Section -->
+  <div class="ad-horizontal bottom-ad">
     Google Ad Placeholder (Bottom)
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-dark text-white mt-4">
-    <p>© 2025 dPal. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="script.js"></script>
-  
-  <!-- Dynamic Header Loader -->
   <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-      })
-      .catch(error => console.error('Error loading header:', error));
-  </script>
-  
-  <script>
-    // Utility function to get query parameter by name
+    // Function to load post dynamically
     function getQueryParam(param) {
       const params = new URLSearchParams(window.location.search);
       return params.get(param);
     }
 
-    // Load the post based on the id query parameter
     function loadPost(postId) {
       fetch("posts.json")
         .then(response => response.json())
@@ -130,7 +79,7 @@
           const post = posts.find(p => p.id === postId);
           const container = document.getElementById("post-detail");
           if (post) {
-            let imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}">` : "";
+            let imageHtml = post.image ? `<div class="post-image-container"><img src="${post.image}" alt="${post.title}"></div>` : "";
             container.innerHTML = `
               ${imageHtml}
               <h1>${post.title}</h1>
@@ -153,11 +102,27 @@
     } else {
       document.getElementById("post-detail").innerHTML = "<p>No post specified.</p>";
     }
+
+    // Load Recent Posts
+    function loadRecentPosts() {
+      fetch("posts.json")
+        .then(response => response.json())
+        .then(posts => {
+          const recentList = document.getElementById("recent-posts-list");
+          recentList.innerHTML = "";
+          posts.slice(0, 5).forEach(post => {
+            const li = document.createElement("li");
+            li.innerHTML = `<img src="${post.image}" alt="${post.title}"><a href="post.html?id=${post.id}">${post.title}</a>`;
+            recentList.appendChild(li);
+          });
+        })
+        .catch(error => console.error("Error loading recent posts:", error));
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      loadRecentPosts();
+    });
   </script>
-  
-  <!-- Load Recent Posts -->
-  <script>
-    loadRecentPosts();
-  </script>
+
 </body>
 </html>
