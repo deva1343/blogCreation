@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dPal - Privacy Policy</title>
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
@@ -34,38 +34,19 @@
   </style>
 </head>
 <body>
-  <!-- Constant Navbar -->
-  <header>
-    <div class="header-container container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="dPal: Health Wealth Mind">
-        </a>
-      </div>
-      <nav>
-        <ul class="nav-list d-flex flex-wrap">
-          <li><a href="index.html" data-category="all">Home</a></li>
-          <li><a href="#" onclick="filterPosts('Food & Recipes')">Food & Recipes</a></li>
-          <li><a href="#" onclick="filterPosts('Health & Fitness')">Health & Fitness</a></li>
-          <li><a href="#" onclick="filterPosts('Lifestyle')">Lifestyle</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- Header Placeholder (Dynamic Load) -->
+  <div id="header-placeholder"></div>
 
   <!-- Top Horizontal Ad -->
   <div class="ad-horizontal top-ad text-center">
     Google Ad Placeholder (Top)
   </div>
 
-  <!-- Main Layout -->
+  <!-- Main Content -->
   <div class="container main-container mt-5 pt-5">
     <div class="row">
-      <!-- Content Area (70%) -->
-      <div class="col-lg-8 content">
+      <!-- Full-width Content for Privacy Policy -->
+      <div class="col-12 content">
         <div class="privacy-container">
           <h2>Privacy Policy</h2>
           <p>At dPal, your privacy is our priority. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website or subscribe to our services.</p>
@@ -88,12 +69,6 @@
           <p>We may update our Privacy Policy periodically. Any changes will be posted on this page.</p>
         </div>
       </div>
-      <!-- Sidebar (30%) -->
-      <div class="col-lg-4 sidebar">
-        <div class="ad-placeholder mb-4 text-center">
-          Google Ad Placeholder (Right)
-        </div>
-      </div>
     </div>
   </div>
 
@@ -111,5 +86,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="script.js"></script>
+  
+  <!-- Dynamic Header Loader -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
 </body>
 </html>
