@@ -16,7 +16,7 @@ html, body {
 .custom-navbar {
   background: linear-gradient(90deg, #41E296, #2CCF83);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  min-height: 80px;
+  min-height: 80px; /* Constant navbar height */
 }
 .navbar-brand .logo-img {
   height: 60px;
@@ -62,7 +62,7 @@ html, body {
 }
 
 /* Main Layout */
-/* Using Bootstrap grid, so we don’t need to define extra flex styles here */
+/* Using Bootstrap grid now, so we don’t need to define extra flex styles here */
 .content {
   background: white;
   padding: 20px;
@@ -188,8 +188,10 @@ footer {
   .post-main-image,
   .post-content img {
     width: 100%;
-    height: auto;  /* Allow natural scaling without fixed max-height */
+    height: auto;  /* Allow natural scaling */
     object-fit: contain;
+    border: 2px solid #ddd;  /* Add a subtle frame */
+    border-radius: 5px;
   }
 }
 
